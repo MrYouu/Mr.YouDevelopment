@@ -1,1 +1,237 @@
+<!--The HTML code is property to Mr. You (Kristiyan Valchev) and can only be viewed-->
+<!--If you want to use part of the code, please first contact me: krisvalchev@gmail.com-->
 
+<html id = "html" style = "overflow-y: auto;">
+    <head>
+        <link href = "https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel = "stylesheet">
+        <link type = "text/css" rel = "stylesheet" href = "../Files/Style.css">
+        <link rel = "icon" href = "../Images/Logo.png" type = "image" sizes = "16x16">
+
+        <meta charset = "utf-8">
+        <meta name = "description" content = "This is a website for Kristiyan Valchev, other known as Mr. You">
+        <meta name = "keywords" content = "Programming, Kristiyan Valchev, C#, HTML, CSS, CS, Unity, Gaming, Games, Game">
+        <meta name = "author" content = "Kristiyan Valchev">
+        <meta name = "viewport" content = "width = device-width, user-scalable = no, initial-scale = 1">
+        
+        <script type = "text/javascript" src = "../Files/Functions.js"></script>
+        <script src = "https://kit.fontawesome.com/190623e0b3.js" crossorigin = "anonymous"></script>
+
+        <title>Mr. You Projects</title>
+    </head>
+
+    <body id = "body">
+        <!-- #region Default -->
+        <script>
+            window.scroll(
+            {
+                top: 0,
+                left: 0,
+                behavior: 'smooth'
+            });
+
+            function toGameApp()
+			{
+				window.scroll(
+				{
+					top: 600,
+					left: 0,
+					behavior: 'smooth'
+				});
+			}
+		</script>
+        <!-- #endregion Default -->
+
+        <div class = "topBar">
+            <a href = "../index.html" class = "Title">Development.</a>
+            <a href = "Projects.html" class = "Active">Projects</a>
+            <a href = "../index.html" id = "firstSectionName">Home</a>
+
+            <a onclick = "openSideMenu()" class = "threeLineButton">
+                <div></div>
+                <div></div>
+                <div></div>
+            </a>
+        </div>
+
+        <div class = "sideBar">
+            <img src = "../Images/Logo.png" onclick = "location.href = '../index.html';" class = "Logo">
+
+            <div class = "linkHolder">
+                <a href = "https://www.facebook.com/profile.php?id=100023130139405" class = "fab fa-facebook-f" target = "_blank"></a>
+                <a href = "https://www.instagram.com/kriss.vv/" class = "fab fa-instagram" target = "_blank"></a>
+                <a href = "https://play.google.com/store/apps/developer?id=Mr.+You" class = "fab fa-google-play" target = "_blank"></a>
+            </div>
+
+            <div class = "Line"></div>
+
+            <div class = "mobileBottomBar">
+                <div onclick = "" class = "buttonsHolder Projects Active">
+                    Games
+                </div>
+
+                <div onclick = "" class = "buttonsHolder Projects theOtherOne">
+                    Apps
+                </div>
+            </div>
+        </div>
+
+        <h1 class = "mainTitle Left">Games</h1>
+        <h1 class = "mainTitle Right">Apps</h1>
+
+        <p class = "textUnderTitle Left">
+            All of my personal games that I worked on during the years are here. Different genres
+            can be found so hopefully you find something for you.
+        </p>
+
+        <p class = "textUnderTitle Right">
+            The apps that I developed can be seen below. They can be downloaded from Google
+            Play Store and can be used from everyone.
+        </p>
+
+        <a onclick = "toGameApp()" class = "buttonOne Left Projects">
+            Play
+        </a>
+
+        <a onclick = "toGameApp()" class = "buttonOne Right Projects">
+            Try
+        </a>
+
+        <!--  When adding new game, change the margin-top property with 400px on the gameHolder  -->
+        <div class = "gameHolder MD">
+            <img src = "../Images/gameIcons/magicDengenLogo.png" class = "Logo">
+
+            <h1 class = "gameTitle">Magic Dengen</h1>
+
+            <p class = "gameCompatibleText">
+                Compatible: <i class = "fab fa-windows"><span class = "tooltipText">Windows</span></i>
+                            <i class = "fab fa-apple"><span class = "tooltipText">Mac</span></i>
+                            <i class = "fab fa-linux"><span class = "tooltipText">Linux</span></i>
+            </p>
+
+            <p class = "gameVersion">Version: <colorful>Beta 1.0</colorful></p>
+
+            <p class = "gameDescroption">
+                Short description: You as a wizard need to defend <smallerText>yourself in the
+                hidden dungeon from the  monsters.</smallerText>
+                <smallerTextEnding>...</smallerTextEnding>
+            </p>
+
+            <a href = "#" class = "gameDownloadButton">Download</a>
+            <a href = "#" class = "gameSeeMoreButton">See more</a>
+        </div>
+
+        <div class = "gameHolder CW">
+            <img src = "../Images/gameIcons/crystalWalkLogo.png" class = "Logo">
+
+            <h1 class = "gameTitle">Crystal Walk</h1>
+
+            <p class = "gameCompatibleText">
+                Compatible: <i class = "fab fa-windows"><span class = "tooltipText">Windows</span></i>
+                            <i class = "fab fa-apple"><span class = "tooltipText">Mac</span></i>
+                            <i class = "fab fa-linux"><span class = "tooltipText">Linux</span></i>
+            </p>
+
+            <p class = "gameVersion">Version: <colorful>Beta 1.0</colorful></p>
+
+            <p class = "gameDescroption">
+                Short description: Walk in the endless world and <smallerText>find the
+                crystals in four biomes.</smallerText>
+                <smallerTextEnding>...</smallerTextEnding>
+            </p>
+
+            <a href = "#" class = "gameDownloadButton">Download</a>
+            <a href = "#" class = "gameSeeMoreButton">See more</a>
+        </div>
+
+        <div class = "gameHolder EF">
+            <img src = "../Images/gameIcons/ecoFisherLogo.png" class = "Logo">
+
+            <h1 class = "gameTitle">Eco Fisher</h1>
+
+            <p class = "gameCompatibleText">
+                Compatible: <i class = "fab fa-android"><span class = "tooltipText">Android</span></i>
+            </p>
+
+            <p class = "gameVersion">Version: <colorful>1.1.3</colorful></p>
+
+            <p class = "gameDescroption">
+                Short description: Use your fishing rod and clean the <smallerText>water from the
+                litter in it. Upgrade and expand your company.</smallerText>
+                <smallerTextEnding>...</smallerTextEnding>
+            </p>
+
+            <a href = "#" class = "gameDownloadButton">Download</a>
+            <a href = "#" class = "gameSeeMoreButton">See more</a>
+        </div>
+
+        <div class = "gameHolder JI">
+            <img src = "../Images/gameIcons/jumpItLogo.png" class = "Logo">
+
+            <h1 class = "gameTitle">Jump It</h1>
+
+            <p class = "gameCompatibleText">
+                Compatible: <i class = "fab fa-windows"><span class = "tooltipText">Windows</span></i>
+                            <i class = "fab fa-apple"><span class = "tooltipText">Mac</span></i>
+                            <i class = "fab fa-linux"><span class = "tooltipText">Linux</span></i>
+            </p>
+
+            <p class = "gameVersion">Version: <colorful>0.1.7</colorful></p>
+
+            <p class = "gameDescroption">
+                Short description: Platformer game, containing ten <smallerText>levels. The goal
+                is to reach the other side of the map</smallerText>
+                <smallerTextEnding>...</smallerTextEnding>
+            </p>
+
+            <a href = "#" class = "gameDownloadButton">Download</a>
+            <a href = "#" class = "gameSeeMoreButton">See more</a>
+        </div>
+
+        <div class = "rightBox Projects">
+            <!--  When adding new game, change the margin-top property with 400px on the appHolder  -->
+            <div class = "appHolder BR">
+                <img src = "../Images/appIcons/blinkReminder.png" class = "Logo">
+    
+                <h1 class = "appTitle">Blink Reminder</h1>
+    
+                <p class = "appCompatibleText">
+                    Compatible: <i class = "fab fa-android"><span class = "tooltipText">Android</span></i>
+                </p>
+    
+                <p class = "appVersion">Version: <colorful>Alpha 1.1</colorful></p>
+    
+                <p class = "appDescroption">
+                    Short description: You need to blink for the health <smallerText>of your eyes.
+                    This app will remind you to do so and to wet them.</smallerText>
+                    <smallerTextEnding>...</smallerTextEnding>
+                </p>
+    
+                <a href = "#" class = "appDownloadButton">Download</a>
+                <a href = "#" class = "appSeeMoreButton">See more</a>
+            </div>
+
+            <div class = "appHolder FW">
+                <img src = "../Images/appIcons/furnViewLogo.png" class = "Logo">
+    
+                <h1 class = "appTitle">FurnView</h1>
+    
+                <p class = "appCompatibleText">
+                    Compatible: <i class = "fab fa-android"><span class = "tooltipText">Android</span></i>
+                </p>
+    
+                <p class = "appVersion">Version: <colorful>1.23</colorful></p>
+    
+                <p class = "appDescroption">
+                    Short description: This is a mobile app, that will help you to <smallerText>furnish
+                    your room more easily and fast without needing to move big furniture
+                    around.</smallerText><smallerTextEnding>...</smallerTextEnding>
+                </p>
+    
+                <a href = "#" class = "appDownloadButton">Download</a>
+                <a href = "#" class = "appSeeMoreButton">See more</a>
+            </div>
+        </div>
+
+        <div class = "Spacer afterProjects"></div>
+    </body>
+</html>
