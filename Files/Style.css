@@ -35,13 +35,13 @@ body
 
 ::-webkit-scrollbar-thumb
 {
-	background: #e1ba04; 
+	background: #3E3E3E; 
 	border-radius: 70px;
 }
 
 ::-webkit-scrollbar-thumb:hover
 {
-	background: #d0a903; 
+	background: #2d2d2d; 
 }
 /*#endregion Scrow bar */
 
@@ -137,7 +137,7 @@ body
     height: 30px;
     background-color: transparent;
     margin-top: 35px;
-    margin-right: 30px;
+    margin-right: 20px;
 }
 
 .topBar a.threeLineButton div
@@ -292,22 +292,45 @@ body
     background-color: transparent;
 }
 
-.sideBar .mobileBottomBar a
+.sideBar .mobileBottomBar .buttonsHolder
 {
     position: absolute;
-    top: calc(50% - 13px);
-    left: calc(50% - 16px);
-    font-size: 24px;
+    height: 40px;
+    top: 10;
+    left: 10;
     color: #fafafa;
+    font-size: 26px;
+    text-align: center;
+    border-radius: 30px;
+    margin: 0;
 }
 
-.sideBar .mobileBottomBar .homeButton
+.sideBar .mobileBottomBar .buttonsHolder.Projects
 {
-    position: absolute;
-    width: 50%;
-    height: 100%;
-    top: 0;
-    left: 0;
+    width: calc(50% - 15px);
+}
+
+.sideBar .mobileBottomBar .buttonsHolder.Projects.Active
+{
+    color: #3E3E3E;
+    background-color: #75FF96;
+}
+
+.sideBar .mobileBottomBar .buttonsHolder.Projects.Active:hover
+{
+    background-color: #64ee85;
+}
+
+.sideBar .mobileBottomBar .buttonsHolder.Projects.theOtherOne
+{
+    float: right;
+    left: auto;
+    right: 10;
+}
+
+.sideBar .mobileBottomBar .buttonsHolder.Projects.theOtherOne:hover
+{
+    background-color: #4f4f4f;
 }
 /*#endregion Side bar */
 
@@ -329,6 +352,12 @@ body
     clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
     opacity: 0;
+}
+
+.rightBox.Projects
+{
+    background-color: #75FF96;
+    height: 2400px;
 }
 
 .mainPageImage
@@ -373,6 +402,13 @@ h1.mainTitle
     opacity: 0;
 }
 
+h1.mainTitle.Right
+{
+    left: auto;
+    right: 70;
+    text-align: right;
+}
+
 p.textUnderTitle
 {
     position: absolute;
@@ -389,6 +425,14 @@ p.textUnderTitle
     animation: dropDown .3s ease-out forwards .7s;
     transform: translateY(-50px);
     opacity: 0;
+}
+
+p.textUnderTitle.Right
+{
+    width: calc(50% - 75px - 15px);
+    left: auto;
+    right: 75;
+    text-align: right;
 }
 
 .buttonOne
@@ -408,6 +452,32 @@ p.textUnderTitle
     animation: dropDown .3s ease-out forwards .8s;
     transform: translateY(-50px);
     opacity: 0;
+}
+
+.buttonOne.Right
+{
+    left: auto;
+    right: 75;
+}
+
+.buttonOne.Right.Projects
+{
+    background-color: #fafafa;
+}
+
+.buttonOne.Right.Projects:hover
+{
+    background-color: #e9e9e9;
+}
+
+.buttonOne.Left.Projects
+{
+    background-color: #75FF96;
+}
+
+.buttonOne.Left.Projects:hover
+{
+    background-color: #64ee85;
 }
 
 .buttonTwo
@@ -530,14 +600,14 @@ img.otherSectionImage
     opacity: 0;
 }
 
-.rightBox a.Right
+.rightBox a.arrowButton.Right
 {
     float: left;
     left: 0;
     background-color: #fafafa;
 }
 
-a.Left
+a.arrowButton.Left
 {
     float: right;
     right: calc(50%);
@@ -557,6 +627,254 @@ a.Left
     width: 55px;
 }
 /*#endregion Arrow buttons */
+
+/*#region Projects */
+.gameHolder
+{
+    position: absolute;
+    width: calc(50% - 155px - 20px);
+    height: 320px;
+    top: 800;
+    left: 155;
+    background-color: transparent;
+}
+
+.gameHolder img.Logo
+{
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    top: 15;
+    left: 0;
+}
+
+.gameHolder .gameTitle
+{
+    position: absolute;
+    top: 0;
+    left: 140;
+    font-size: 50px;
+    font-weight: bold;
+    color: #3E3E3E;
+}
+
+.gameHolder .gameCompatibleText
+{
+    position: absolute;
+    top: 80;
+    left: 140;
+    font-size: 18px;
+    font-weight: normal;
+    color: #3E3E3Eaa;
+}
+
+.gameHolder .gameCompatibleText i
+{
+    color: #64ee85;
+    margin-left: 10px;
+}
+
+.gameHolder .gameVersion
+{
+    position: absolute;
+    top: 110;
+    left: 140;
+    font-size: 18px;
+    font-weight: normal;
+    color: #3E3E3Eaa;
+}
+
+.gameHolder .gameVersion colorful
+{
+    color: #64ee85;
+    font-weight: bold;
+}
+
+.gameHolder .gameDescroption
+{
+    position: relative;
+    width: calc(100% - 140px - 20px);
+    top: 140;
+    left: 140;
+    font-size: 18px;
+    font-weight: normal;
+    color: #3E3E3Eaa;
+}
+
+.gameHolder .gameDownloadButton
+{
+    float: right;
+    position: absolute;
+    bottom: 10;
+    right: 20;
+    font-size: 22px;
+    font-weight: normal;
+    color: #3E3E3E;
+    background-color: #75FF96;
+    padding: 4px 18px;
+}
+
+.gameHolder .gameDownloadButton:hover
+{
+    background-color: #64ee85;
+}
+
+.gameHolder .gameSeeMoreButton
+{
+    float: right;
+    position: absolute;
+    bottom: 10;
+    right: 187;
+    font-size: 22px;
+    font-weight: normal;
+    color: #3E3E3Eaa;
+    background-color: transparent;
+    padding: 4px 18px;
+}
+
+.appHolder
+{
+    float: right;
+    position: absolute;
+    width: calc(100% - 70px - 20px);
+    height: 320px;
+    top: 800;
+    right: 70;
+    background-color: transparent;
+}
+
+.appHolder img.Logo
+{
+    float: right;
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    top: 15;
+    right: 0;
+}
+
+.appHolder .appTitle
+{
+    float: right;
+    position: absolute;
+    top: 0;
+    right: 140;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: right;
+    color: #3E3E3E;
+}
+
+.appHolder .appCompatibleText
+{
+    float: right;
+    position: absolute;
+    top: 80;
+    right: 140;
+    font-size: 18px;
+    font-weight: normal;
+    text-align: right;
+    color: #3E3E3Eaa;
+}
+
+.appHolder .appCompatibleText i
+{
+    color: #fafafa;
+    margin-left: 10px;
+}
+
+.appHolder .appVersion
+{
+    float: right;
+    position: absolute;
+    top: 110;
+    right: 140;
+    font-size: 18px;
+    font-weight: normal;
+    text-align: right;
+    color: #3E3E3Eaa;
+}
+
+.appHolder .appVersion colorful
+{
+    color: #fafafa;
+    font-weight: bold;
+}
+
+.appHolder .appDescroption
+{
+    float: right;
+    position: relative;
+    width: calc(100% - 140px - 20px);
+    top: 140;
+    right: 140;
+    font-size: 18px;
+    font-weight: normal;
+    text-align: right;
+    color: #3E3E3Eaa;
+}
+
+.appHolder .appDownloadButton
+{
+    float: left;
+    position: absolute;
+    bottom: 10;
+    left: 20;
+    font-size: 22px;
+    font-weight: normal;
+    color: #3E3E3E;
+    background-color: #fafafa;
+    padding: 4px 18px;
+}
+
+.appHolder .appDownloadButton:hover
+{
+    background-color: #e9e9e9;
+}
+
+.appHolder .appSeeMoreButton
+{
+    float: left;
+    position: absolute;
+    bottom: 10;
+    left: 187;
+    font-size: 22px;
+    font-weight: normal;
+    color: #3E3E3Eaa;
+    background-color: transparent;
+    padding: 4px 18px;
+}
+
+.gameHolder.MD
+{
+    margin-top: 0px;
+}
+
+.gameHolder.CW
+{
+    margin-top: 400px;
+}
+
+.gameHolder.EF
+{
+    margin-top: 800px;
+}
+
+.gameHolder.JI
+{
+    margin-top: 1200px;
+}
+
+.appHolder.BR
+{
+    margin-top: 0px;
+}
+
+.appHolder.FW
+{
+    margin-top: 400px;
+}
+/*#endregion Projects */
 
 /*#region Cards */
 .Card
@@ -581,7 +899,7 @@ a.Left
     opacity: 0;
 }
 
-.myIntro, .About, .Learn, .Projects
+.Card.myIntro, .Card.About, .Card.Learn, .Card.Projects
 {
     padding-bottom: 90px;
 }
@@ -701,6 +1019,48 @@ div, p, i, h1, h1, h3, h4, h5, h6
 .afterCards
 {
     height: 230px;
+}
+
+.afterProjects
+{
+    height: 225px;
+}
+
+.tooltipText
+{
+    visibility: hidden;
+    position: absolute;
+    width: 120px;
+    top: -3;
+    left: calc(100% + 20px);
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    border-radius: 6px;
+    background-color: #3E3E3E;
+    padding: 5px 0;
+    
+    z-index: 10;
+}
+
+.appHolder .tooltipText
+{
+    left: -100%;
+}
+
+i:hover .tooltipText
+{
+    visibility: visible;
+}
+
+smallerText
+{
+    display: inline;
+}
+
+smallerTextEnding
+{
+    display: none;
 }
 
 /*#region Animations */
@@ -876,6 +1236,22 @@ div, p, i, h1, h1, h3, h4, h5, h6
     {
         display: none;
     }
+
+    .gameHolder .gameDescroption smallerText, .appHolder .appDescroption smallerText
+    {
+        display: none;
+    }
+
+    .gameHolder .gameDescroption smallerTextEnding, .appHolder .appDescroption smallerTextEnding
+    {
+        display: inline;
+    }
+
+    .gameHolder .gameTitle, .appHolder .appTitle
+    {
+        top: 10;
+        font-size: 30px;
+    }
 }
 
 @media screen and (max-width: 1100px)
@@ -904,6 +1280,12 @@ div, p, i, h1, h1, h3, h4, h5, h6
     {
         right: -370;
     }
+
+    .gameHolder
+    {
+        width: calc(50% - 115px - 20px);
+        left: 115;
+    }
 }
 
 @media screen and (max-width: 1000px)
@@ -916,6 +1298,11 @@ div, p, i, h1, h1, h3, h4, h5, h6
     .Spacer
     {
         display: block;
+    }
+
+    i:hover .tooltipText
+    {
+        visibility: hidden;
     }
 
     .topBar
@@ -937,9 +1324,31 @@ div, p, i, h1, h1, h3, h4, h5, h6
         left: 40;
     }
 
-    .topBar a, .arrowButton, h1.mainTitle, p.textUnderTitle, .buttonOne, .mainPageImage, .sideBar img.Logo, .sideBar .linkHolder
+    .topBar a, .arrowButton, h1.mainTitle, p.textUnderTitle, .buttonOne, .mainPageImage, .sideBar img.Logo, .sideBar .linkHolder, .rightBox .appHolder
     {
         display: none;
+    }
+
+    .sideBar.Home .linkHolder
+    {
+        display: unset;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+
+    .sideBar.Home .linkHolder a
+    {
+        position: relative;
+        width: calc(33% - 20px);
+        top: 15;
+        left: 10;
+        font-size: 30px;
+        text-align: center;
+        color: #fafafa;
+        margin-top: 0px;
+        margin-right: 10px;
     }
 
     .topBar a.threeLineButton, .topBar .Title
@@ -970,7 +1379,7 @@ div, p, i, h1, h1, h3, h4, h5, h6
         display: unset;
     }
 
-    .rightBox
+    .rightBox, .rightBox.Projects
     {
         float: left;
         position: fixed;
@@ -995,6 +1404,64 @@ div, p, i, h1, h1, h3, h4, h5, h6
     .Card
     {
         display: block;
+    }
+
+    .gameHolder.MD, .gameHolder.CW, .gameHolder.EF, .gameHolder.JI, .appHolder.BR, .appHolder.FW
+    {
+        margin-top: 0;
+    }
+
+    .gameHolder, .appHolder
+    {
+        position: relative;
+        width: calc(100% - 40px);
+        top: 130;
+        left: 20;
+        background-color: #fff;
+        border-radius: 30px;
+        margin-bottom: 10px;
+        overflow: hidden;
+
+        z-index: 2;
+    
+        filter: drop-shadow(0px 10px 8px #33333377);
+        -webkit-filter: drop-shadow(0px 10px 8px #33333377);
+    }
+
+    .gameHolder img.Logo
+    {
+        width: 90px;
+        height: 90px;
+        top: 20;
+        left: 20;
+        border-radius: 8px;
+    }
+
+    .gameHolder .gameTitle
+    {
+        top: 20;
+        left: 130;
+        font-size: 28px;
+    }
+
+    .gameHolder .gameCompatibleText, .gameHolder .gameVersion, .gameHolder .gameDescroption
+    {
+        left: 130;
+    }
+
+    .gameHolder .gameDownloadButton
+    {
+        bottom: 15;
+        right: 15;
+        font-size: 20px;
+        border-radius: 30px;
+    }
+
+    .gameHolder .gameSeeMoreButton
+    {
+        bottom: 15;
+        right: 165;
+        font-size: 20px;
     }
 }
 /*#endregion Media 1300-1000 */
@@ -1031,13 +1498,91 @@ div, p, i, h1, h1, h3, h4, h5, h6
 
 @media screen and (max-width: 400px)
 {
+    .topBar .Title
+    {
+        font-size: 26px;
+    }
 
+    .sideBar
+    {
+        height: 50px;
+    }
+
+    .sideBar.Home .linkHolder a
+    {
+        font-size: 20px;
+    }
+
+    .sideBar .mobileBottomBar .buttonsHolder
+    {
+        height: 30px;
+        font-size: 20px;
+    }
+
+    .gameHolder, .appHolder
+    {
+        height: 280px;
+    }
+
+    .gameHolder img.Logo
+    {
+        width: 60px;
+        height: 60px;
+        top: 15;
+        left: 15;
+    }
+
+    .gameHolder .gameTitle
+    {
+        width: calc(100% - 105px);
+        top: 25;
+        left: 90;
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .gameHolder .gameCompatibleText
+    {
+        top: 90;
+        left: 15;
+        font-size: 16;
+    }
+
+    .gameHolder .gameVersion
+    {
+        top: 120;
+        left: 15;
+        font-size: 16;
+    }
+
+    .gameHolder .gameDescroption
+    {
+        width: calc(100% - 30px);
+        top: 150;
+        left: 15;
+        font-size: 16;
+    }
+
+    .gameHolder .gameDownloadButton
+    {
+        font-size: 18px;
+        border-radius: 30px;
+    }
+
+    .gameHolder .gameSeeMoreButton
+    {
+        right: 145;
+        font-size: 18px;
+    }
 }
 /*#endregion Media 500-400 */
 
 /*#region Media 350 */
 @media screen and (max-width: 350px)
 {
-
+    .gameHolder .gameTitle
+    {
+        font-size: 22px;
+    }
 }
 /*#endregion Media 350 */
