@@ -38,15 +38,15 @@
             <a onclick = "About()" id = "secondSectionName">About</a>
             <a onclick = "Home()" class = "Active" id = "firstSectionName">Home</a>
 
-            <a onclick = "openSideMenu()" class = "threeLineButton">
+            <!--<a onclick = "openSideMenu()" class = "threeLineButton">
                 <div></div>
                 <div></div>
                 <div></div>
-            </a>
+            </a>-->
         </div>
 
         <div class = "sideBar Home">
-            <img src = "Images/Logo.png" onclick = "location.href = 'index.html';" class = "Logo">
+            <img src = "Images/Logos/Mr.YouDefaultLogo.png" onclick = "location.href = 'index.html';" class = "Logo">
 
             <div class = "linkHolder">
                 <a href = "https://www.facebook.com/profile.php?id=100023130139405" class = "fab fa-facebook-f" target = "_blank"></a>
@@ -59,7 +59,7 @@
 
         <h1 class = "mainTitle" id = "mainTitle">Mr. You</h1>
         <h1 class = "mainTitle otherSectionText" id = "aboutTitle">Hello</h1>
-        <h1 class = "mainTitle otherSectionText" id = "learnTitle">Get help</h1>
+        <h1 class = "mainTitle otherSectionText" id = "learnTitle">Get helped</h1>
         <h1 class = "mainTitle otherSectionText" id = "projectsTitle">Play</h1>
 
         <p class = "textUnderTitle" id = "mainInfo">
@@ -137,8 +137,8 @@
             <div class = "sectionBG fourth" id = "fourthSection"></div>
         </div>
 
-        <a href = "#" class = "Card myIntro">
-            <img src = "Images/Logo.png" class = "Icon">
+        <a href = "#" class = "Card myIntro" style = "z-index: 5;">
+            <img src = "Images/Logos/Mr.YouDefaultLogo.png" class = "Icon">
 
             <h1 class = "cardTitle">Mr. You</h1>
 
@@ -149,7 +149,7 @@
             <div class = "seeMoreButton">More<i class = "fas fa-chevron-right"></i></div>
         </a>
 
-        <a href = "#" class = "Card About" style = "animation-delay: .8s;">
+        <a href = "#" class = "Card About" style = "animation-delay: .8s; z-index: 6;">
             <img src = "Images/Hello.png" class = "cardImage">
 
             <h1 class = "cardTitle">Hello</h1>
@@ -161,7 +161,7 @@
             <div class = "seeMoreButton">More<i class = "fas fa-chevron-right"></i></div>
         </a>
 
-        <a href = "#" class = "Card Learn" style = "animation-delay: .9s;">
+        <a href = "#" class = "Card Learn" style = "animation-delay: .9s; z-index: 7;">
             <img src = "Images/Learn.png" class = "cardImage">
 
             <h1 class = "cardTitle">Get help</h1>
@@ -173,7 +173,7 @@
             <div class = "seeMoreButton">More<i class = "fas fa-chevron-right"></i></div>
         </a>
 
-        <a href = "otherPages/Projects.html" class = "Card Projects" style = "animation-delay: 1s;">
+        <a href = "otherPages/Projects.html" class = "Card Projects" style = "animation-delay: 1s; z-index: 8;">
             <img src = "Images/Play.png" class = "cardImage">
 
             <h1 class = "cardTitle">Play</h1>
