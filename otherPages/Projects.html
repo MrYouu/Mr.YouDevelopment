@@ -46,15 +46,15 @@
             <a href = "Projects.html" class = "Active">Projects</a>
             <a href = "../index.html" id = "firstSectionName">Home</a>
 
-            <a onclick = "openSideMenu()" class = "threeLineButton">
+            <!--<a onclick = "openSideMenu()" class = "threeLineButton">
                 <div></div>
                 <div></div>
                 <div></div>
-            </a>
+            </a>-->
         </div>
 
         <div class = "sideBar">
-            <img src = "../Images/Logo.png" onclick = "location.href = '../index.html';" class = "Logo">
+            <img src = "../Images/Logos/Mr.YouDefaultLogo.png" onclick = "location.href = '../index.html';" class = "Logo">
 
             <div class = "linkHolder">
                 <a href = "https://www.facebook.com/profile.php?id=100023130139405" class = "fab fa-facebook-f" target = "_blank"></a>
@@ -65,11 +65,11 @@
             <div class = "Line"></div>
 
             <div class = "mobileBottomBar">
-                <div onclick = "" class = "buttonsHolder Projects Active">
+                <div onclick = "gameMenuOpen()" class = "buttonsHolder Projects Active" id = "gameButton">
                     Games
                 </div>
 
-                <div onclick = "" class = "buttonsHolder Projects theOtherOne">
+                <div onclick = "appMenuOpen()" class = "buttonsHolder Projects theOtherOne" id = "appButton">
                     Apps
                 </div>
             </div>
@@ -84,8 +84,8 @@
         </p>
 
         <p class = "textUnderTitle Right">
-            The apps that I developed can be seen below. They can be downloaded from Google
-            Play Store and can be used from everyone.
+            The apps that I developed can be seen below. Some of them can be downloaded from Google
+            Play Store, others can be downloaded from here.
         </p>
 
         <a onclick = "toGameApp()" class = "buttonOne Left Projects">
@@ -97,7 +97,7 @@
         </a>
 
         <!--  When adding new game, change the margin-top property with 400px on the gameHolder  -->
-        <div class = "gameHolder MD">
+        <div class = "gameHolder MD" style = "z-index: 5;" id = "gameHolder">
             <img src = "../Images/gameIcons/magicDengenLogo.png" class = "Logo">
 
             <h1 class = "gameTitle">Magic Dengen</h1>
@@ -120,7 +120,7 @@
             <a href = "#" class = "gameSeeMoreButton">See more</a>
         </div>
 
-        <div class = "gameHolder CW">
+        <div class = "gameHolder CW" style = "animation-delay: .8s; z-index: 6;" id = "gameHolder">
             <img src = "../Images/gameIcons/crystalWalkLogo.png" class = "Logo">
 
             <h1 class = "gameTitle">Crystal Walk</h1>
@@ -143,7 +143,7 @@
             <a href = "#" class = "gameSeeMoreButton">See more</a>
         </div>
 
-        <div class = "gameHolder EF">
+        <div class = "gameHolder EF" style = "animation-delay: .9s; z-index: 7;" id = "gameHolder">
             <img src = "../Images/gameIcons/ecoFisherLogo.png" class = "Logo">
 
             <h1 class = "gameTitle">Eco Fisher</h1>
@@ -164,7 +164,7 @@
             <a href = "#" class = "gameSeeMoreButton">See more</a>
         </div>
 
-        <div class = "gameHolder JI">
+        <div class = "gameHolder JI" style = "animation-delay: 1s; z-index: 8;" id = "gameHolder">
             <img src = "../Images/gameIcons/jumpItLogo.png" class = "Logo">
 
             <h1 class = "gameTitle">Jump It</h1>
@@ -181,6 +181,50 @@
                 Short description: Platformer game, containing ten <smallerText>levels. The goal
                 is to reach the other side of the map</smallerText>
                 <smallerTextEnding>...</smallerTextEnding>
+            </p>
+
+            <a href = "#" class = "gameDownloadButton">Download</a>
+            <a href = "#" class = "gameSeeMoreButton">See more</a>
+        </div>
+
+        <!--  Apps  -->
+
+        <div class = "gameHolder BR App" style = "margin-top: -1320px; z-index: 6;" id = "appHolder">
+            <img src = "../Images/appIcons/blinkReminder.png" class = "Logo">
+
+            <h1 class = "gameTitle">Blink Reminder</h1>
+
+            <p class = "gameCompatibleText">
+                Compatible: <i class = "fab fa-android"><span class = "tooltipText">Android</span></i>
+            </p>
+
+            <p class = "gameVersion">Version: <colorful>Alpha 1.1</colorful></p>
+
+            <p class = "gameDescroption">
+                Short description: You need to blink for the health <smallerText>of your eyes.
+                This app will remind you to do so and to wet them.</smallerText>
+                <smallerTextEnding>...</smallerTextEnding>
+            </p>
+
+            <a href = "#" class = "gameDownloadButton">Download</a>
+            <a href = "#" class = "gameSeeMoreButton">See more</a>
+        </div>
+
+        <div class = "gameHolder FW App" style = "animation-delay: .8s; z-index: 7;" id = "appHolder">
+            <img src = "../Images/appIcons/furnViewLogo.png" class = "Logo">
+
+            <h1 class = "gameTitle">FurnView</h1>
+
+            <p class = "gameCompatibleText">
+                Compatible: <i class = "fab fa-android"><span class = "tooltipText">Android</span></i>
+            </p>
+
+            <p class = "gameVersion">Version: <colorful>1.23</colorful></p>
+
+            <p class = "gameDescroption">
+                Short description: This is a mobile app, that will help you to <smallerText>furnish
+                your room more easily and fast without needing to move big furniture
+                around.</smallerText><smallerTextEnding>...</smallerTextEnding>
             </p>
 
             <a href = "#" class = "gameDownloadButton">Download</a>
@@ -232,6 +276,6 @@
             </div>
         </div>
 
-        <div class = "Spacer afterProjects"></div>
+        <div class = "Spacer afterProjects" id = "spacerProjects"></div>
     </body>
 </html>
