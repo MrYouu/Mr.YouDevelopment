@@ -403,6 +403,50 @@ function Projects()
     sectionID = 4;
 }
 
+function gameMenuOpen()
+{
+    var gamesList = document.querySelectorAll("[id='gameHolder']");
+    var appsList = document.querySelectorAll("[id='appHolder']");
+
+    for(var i = 0; i < gamesList.length; i++)
+    {
+        gamesList[i].style.animation = "slipeRightGameAppAnimation .3s ease-out forwards";
+    }
+
+    for(var i = 0; i < appsList.length; i++)
+    {
+        appsList[i].style.animation = "slipeRightGameAppAnimation .3s ease-out forwards";
+    }
+
+    document.getElementById("spacerProjects").style.height = "880px";
+    document.getElementById("gameButton").className = "buttonsHolder Projects Active"
+    document.getElementById("appButton").className = "buttonsHolder Projects theOtherOne";
+}
+
+function appMenuOpen()
+{
+    var gamesList = document.querySelectorAll("[id='gameHolder']");
+    var appsList = document.querySelectorAll("[id='appHolder']");
+
+    for(var i = 0; i < gamesList.length; i++)
+    {
+        gamesList[i].style.transform = "translateY(0px)";
+        gamesList[i].style.opacity = "1";
+        gamesList[i].style.animation = "slipeLeftGameAppAnimation .3s ease-out forwards";
+    }
+
+    for(var i = 0; i < appsList.length; i++)
+    {
+        appsList[i].style.transform = "translateY(0px)";
+        appsList[i].style.opacity = "1";
+        appsList[i].style.animation = "slipeLeftGameAppAnimation .3s ease-out forwards";
+    }
+
+    document.getElementById("spacerProjects").style.height = "230px";
+    document.getElementById("appButton").className = "buttonsHolder Projects Active";
+    document.getElementById("gameButton").className = "buttonsHolder Projects theOtherOne";
+}
+
 document.addEventListener('keydown', function(event)
 {
     if (event.keyCode == 37)
