@@ -1379,6 +1379,11 @@ p, div, h1, h2, h3, h4, h5, h6, i, img
         left: 30;
     }
 
+    .backGround
+    {
+        background-image: radial-gradient(circle at 50% 0%,#4b5063 100px, #090d19 60%);
+    }
+
     .ballImage
     {
         width: 300px;
@@ -1506,6 +1511,11 @@ p, div, h1, h2, h3, h4, h5, h6, i, img
 /*#region Media 500-400 */
 @media screen and (max-width: 500px)
 {
+    .backGround
+    {
+        background-image: radial-gradient(circle at 50% 30px,#4b5063 100px, #090d19 50%);
+    }
+
     .Title
     {
         font-size: 70px;
