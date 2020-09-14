@@ -9,6 +9,16 @@ function showCoords(event)
   document.getElementById("mouseCoordinatesText").innerHTML = coords;
 }
 
+function openSideMenu()
+{
+    document.getElementById("sideMenu").style.transform = "translateX(0%)";
+}
+
+function closeSideMenu()
+{
+    document.getElementById("sideMenu").style.transform = "translateX(100%)";
+}
+
 function defaultFunction()
 {
 

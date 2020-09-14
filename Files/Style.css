@@ -419,6 +419,111 @@ body
 }
 /*#endregion Top bar */
 
+/*#region Side menu */
+.siteMenu
+{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #090d19;
+
+    z-index: 40;
+
+    transform: translateX(100%);
+}
+
+.siteMenu a.closeButton
+{
+    float: right;
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    top: 30;
+    left: auto;
+    right: 30;
+}
+
+.siteMenu a.closeButton div
+{
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    top: calc(50% - 2px);
+    left: 0;
+    background-color: #e5e5e5;
+}
+
+.siteMenu a.closeButton div:nth-child(1)
+{
+    transform: rotate(45deg);
+}
+
+.siteMenu a.closeButton div:nth-child(2)
+{
+    transform: rotate(-45deg);
+}
+
+.siteMenu a.closeButton:hover
+{
+    width: 65px;
+    height: 65px;
+}
+
+.siteMenu a
+{
+    position: absolute;
+    width: 100%;
+    top: 120;
+    left: 0;
+    font-size: 26px;
+    font-weight: 100;
+    text-align: center;
+    line-height: 26px;
+    color: #e5e5e5;
+}
+
+.siteMenu a:nth-child(3) { top: 180; }
+.siteMenu a:nth-child(4) { top: 240; }
+.siteMenu a:nth-child(5) { top: 300; }
+
+.siteMenu a:hover
+{
+    letter-spacing: 5px;
+}
+
+.siteMenu a.Active div:nth-child(1)
+{
+    position: absolute;
+    width: 40px;
+    height: 2px;
+    top: calc(50% - 1px);
+    left: calc(50% - 150px);
+    background-color: #e5e5e5;
+}
+
+.siteMenu a.Active div:nth-child(2)
+{
+    position: absolute;
+    width: 40px;
+    height: 2px;
+    top: calc(50% - 1px);
+    left: calc(50% + 110px);
+    background-color: #e5e5e5;
+}
+
+.siteMenu a.Active:hover div:nth-child(1)
+{
+    left: calc(50% - 160px);
+}
+
+.siteMenu a.Active:hover div:nth-child(2)
+{
+    left: calc(50% + 120px);
+}
+/*#endregion Side menu */
+
 /*#region Main things */
 .backGround
 {
@@ -1478,6 +1583,17 @@ p, div, h1, h2, h3, h4, h5, h6, i, img
 
 @media screen and (max-width: 600px)
 {
+    .siteMenu a.closeButton
+    {
+        width: 50px;
+        height: 50px;
+    }
+
+    .siteMenu a.closeButton:hover
+    {
+        width: 55px;
+        height: 55px;
+    }
 
     .sectionHolder
     {
@@ -1588,6 +1704,32 @@ p, div, h1, h2, h3, h4, h5, h6, i, img
 
 @media screen and (max-width: 400px)
 {
+    .siteMenu a
+    {
+        font-size: 20px;
+        line-height: 20px;
+    }
+
+    .siteMenu a.Active div:nth-child(1)
+    {
+        left: calc(50% - 120px);
+    }
+
+    .siteMenu a.Active div:nth-child(2)
+    {
+        left: calc(50% + 80px);
+    }
+
+    .siteMenu a.Active:hover div:nth-child(1)
+    {
+        left: calc(50% - 130px);
+    }
+
+    .siteMenu a.Active:hover div:nth-child(2)
+    {
+        left: calc(50% + 90px);
+    }
+
     .sectionHolderBG
     {
         margin-bottom: 250px;
