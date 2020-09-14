@@ -368,7 +368,7 @@ body
 
 .topBar a.Active
 {
-    filter: saturate(2);
+    font-weight: normal;
 }
 
 .topBar a.threeLineButton
@@ -464,7 +464,7 @@ body
 
     z-index: -1;
 
-    animation: ballRingAnimation 5s infinite ease-out 1s;
+    animation: ballRingAnimation 5s infinite ease-out;
     width: 350px;
     height: 350px;
     top: 225;
@@ -525,7 +525,7 @@ body
 {
     float: right;
     position: absolute;
-    bottom: 60;
+    bottom: 30;
     right: 54;
     font-size: 60px;
     font-weight: bold;
@@ -543,6 +543,158 @@ body
     letter-spacing: 2px;
 }
 /*#endregion Main things */
+
+/*#region Page parts */
+.pageContent
+{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 1100px;
+    left: 0;
+    background-color: transparent;
+
+    z-index: -5;
+}
+
+.sectionHolderBG
+{
+    position: relative;
+    width: 100%;
+    height: 500px;
+    top: 10;
+    left: 0;
+    background-color: #c2a307;
+    box-shadow: 10px 10px 20px #00000080;
+    margin-bottom: 500px;
+    
+    z-index: -2;
+}
+
+.sectionHolderBG.Learn
+{
+    background-color: #028bc2;
+}
+
+.sectionHolderBG.Projects
+{
+    background-color: #61da7d;
+}
+
+.sectionHolder
+{
+    position: absolute;
+    width: calc(50% - 60px);
+    height: 500px;
+    top: -80;
+    background-color: #343849;
+    box-shadow: 10px 10px 20px #00000080;
+
+    z-index: 0;
+}
+
+.sectionHolderBG.Left .sectionHolder
+{
+    float: left;
+    left: 30;
+}
+
+.sectionHolderBG.Right .sectionHolder
+{
+    float: right;
+    right: 30;
+}
+
+.sectionHolder .sectionTitle
+{
+    position: absolute;
+    width: calc(100% - 240px);
+    top: 160;
+    left: 120;
+    font-size: 36px;
+    font-weight: normal;
+    line-height: 36px;
+    color: #e5e5e5;
+}
+
+.sectionHolder .sectionTitle div
+{
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: -10;
+    left: 0;
+    background-color: #e5e5e5;
+    opacity: .7;
+}
+
+.sectionHolder .sectionText
+{
+    position: absolute;
+    width: calc(100% - 240px);
+    top: 230;
+    left: 120;
+    font-size: 20px;
+    font-weight: 100;
+    line-height: 24px;
+    color: #e5e5e5;
+}
+
+.sectionHolder a.sectionButton
+{
+    float: right;
+    position: absolute;
+    bottom: 30;
+    right: 30;
+    font-size: 18px;
+    font-weight: bolder;
+    text-align: center;
+    line-height: 22px;
+    background-color: #090d19;
+    padding: 12px 30px;
+}
+
+.sectionHolder a.sectionButton:hover
+{
+    padding: 12px 35px;
+}
+
+.sectionImage
+{
+    position: absolute;
+    width: calc(50% + 60px);
+    top: 80;
+    background-color: #343849;
+    box-shadow: 10px 10px 20px #00000080;
+    filter: brightness(.9);
+
+    z-index: -1;
+}
+
+.sectionHolderBG.Left .sectionImage
+{
+    float: right;
+    right: 30;
+}
+
+.sectionHolderBG.Right .sectionImage
+{
+    float: left;
+    left: 30;
+}
+
+.sectionTitle
+{
+    position: absolute;
+    width: calc(100% - 120px);
+    top: 1000;
+    left: 54;
+    font-size: 50px;
+    font-weight: normal;
+    line-height: 50px;
+    color: #e5e5e5;
+}
+/*#endregion Page parts */
 
 /*#region Stars */
 #mouseCoordinatesText
@@ -885,7 +1037,7 @@ body
     position: absolute;
     width: 100%;
     height: 250px;
-    top: 3800;
+    top: 3900;
     left: 0;
     background-color: #060d14;
 }
@@ -926,7 +1078,7 @@ body
     top: calc(50% - 18px);
     left: 0;
     font-size: 30px;
-    font-weight: bold;
+    font-weight: 100;
     text-decoration: none;
     text-align: center;
     color: #e5e5e5;
@@ -940,7 +1092,7 @@ body
 
 .bottomBar a.Active
 {
-    color: #fe8906;
+    font-weight: normal;
 }
 
 .bottomLinksHolder
@@ -973,13 +1125,13 @@ body
 
 .bottomBar .Credits powerd:hover company
 {
-    color: #fe8906a0;
+    color: #61da7d;
     transition: ease .3s;
 }
 
 .bottomBar .Credits managed:hover my
 {
-    color: #52A3F9a0;
+    color: #028bc2;
     transition: ease .3s;
 }
 /*#endregion Bottom bar */
@@ -1127,7 +1279,25 @@ p, div, h1, h2, h3, h4, h5, h6, i, img
 
 @media screen and (max-width: 1100px)
 {
+    .sectionHolder
+    {
+        width: calc(50% + 120px);
+    }
 
+    .sectionImage
+    {
+        top: 210;
+    }
+
+    .sectionHolderBG
+    {
+        margin-bottom: 350px;
+    }
+
+    .bottomBar
+    {
+        top: 3500;
+    }
 }
 
 @media screen and (max-width: 1000px)
@@ -1153,6 +1323,11 @@ p, div, h1, h2, h3, h4, h5, h6, i, img
     {
         font-size: 22px;
     }
+
+    .pageNumber
+    {
+        right: 30;
+    }
 }
 
 @media screen and (max-width: 800px)
@@ -1164,28 +1339,207 @@ p, div, h1, h2, h3, h4, h5, h6, i, img
         left: 15;
         font-size: 12px;
     }
+
+    .sectionHolder
+    {
+        height: 370px;
+    }
+
+    .sectionHolder .sectionTitle
+    {
+        width: calc(100% - 120px);
+        top: 60;
+        left: 60;
+        font-size: 30px;
+        line-height: 30px;
+    }
+
+    .sectionHolder .sectionText
+    {
+        width: calc(100% - 120px);
+        top: 120;
+        left: 60;
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .sectionImage
+    {
+        width: calc(500px);
+        top: 200;
+    }
 }
 /*#endregion Media 900-800 */
 
 /*#region Media 700-600 */
 @media screen and (max-width: 700px)
 {
+    .topBar a.Logo
+    {
+        left: 30;
+    }
 
+    .ballImage
+    {
+        width: 300px;
+        height: 300px;
+        left: calc(50% - 150px);
+    }
+
+    .ballRing
+    {
+        width: 400px;
+        height: 400px;
+        top: 150;
+        left: calc(50% - 200px);
+
+        width: 250px;
+        height: 250px;
+        top: 225;
+        left: calc(50% - 125px);
+    }
+
+    @keyframes ballRingAnimation
+    {
+        0%
+        {
+            width: 250px;
+            height: 250px;
+            top: 225;
+            left: calc(50% - 125px);
+        }
+
+        25%
+        {
+            width: 900px;
+            height: 900px;
+            top: -50;
+            left: calc(50% - 450px);
+            opacity: 0;
+        }
+
+        50%
+        {
+            width: 600px;
+            height: 600px;
+            top: 75;
+            left: calc(50% - 300px);
+            opacity: .3;
+        }
+
+        75%
+        {
+            width: 1000px;
+            height: 1000px;
+            top: -100;
+            left: calc(50% - 500px);
+            opacity: 0;
+        }
+
+        100%
+        {
+            width: 250px;
+            height: 250px;
+            top: 225;
+            left: calc(50% - 125px);
+        }
+    }
+
+    .Title
+    {
+        top: 400;
+        font-size: 90px;
+        line-height: 90px;
+    }
+
+    .subTitle
+    {
+        top: 500;
+        font-size: 30px;
+        line-height: 30px;
+        letter-spacing: unset;
+    }
+
+    .Title:hover
+    {
+        letter-spacing: 2px;
+    }
+
+    .Title:hover + .subTitle, .subTitle:hover
+    {
+        letter-spacing: 5px;
+    }
 }
 
 @media screen and (max-width: 600px)
 {
 
+    .sectionHolder
+    {
+        height: 370px;
+    }
+
+    .sectionHolder .sectionTitle
+    {
+        width: calc(100% - 60px);
+        top: 60;
+        left: 30;
+        font-size: 26px;
+        line-height: 26px;
+    }
+
+    .sectionHolder .sectionText
+    {
+        width: calc(100% - 60px);
+        top: 120;
+        left: 30;
+    }
+
+    .sectionImage
+    {
+        width: 400px;
+        top: 250;
+    }
 }
 /*#endregion Media 700-600 */
 
 /*#region Media 500-400 */
 @media screen and (max-width: 500px)
 {
+    .Title
+    {
+        font-size: 70px;
+        line-height: 70px;
+    }
+
+    .subTitle
+    {
+        top: 480;
+        font-size: 26px;
+        line-height: 26px;
+    }
+
+    .Title:hover, .Title:hover + .subTitle, .subTitle:hover
+    {
+        letter-spacing: 2px;
+    }
+
+    .sectionHolderBG
+    {
+        height: 400px;
+    }
+
+    .sectionImage
+    {
+        width: 300px;
+        top: 250;
+    }
+
     /*#region Bottom bar */
     .bottomBar
     {
         height: 320px;
+        top: 3200;
     }
 
     .bottomBar .directionButton
@@ -1224,13 +1578,122 @@ p, div, h1, h2, h3, h4, h5, h6, i, img
 
 @media screen and (max-width: 400px)
 {
+    .sectionHolderBG
+    {
+        margin-bottom: 250px;
+    }
 
+    .sectionHolder
+    {
+        width: calc(100% - 30px - 30px);
+    }
+
+    .sectionHolderBG.Left .sectionHolder
+    {
+        left: 15;
+    }
+    
+    .sectionHolderBG.Right .sectionHolder
+    {
+        right: 15;
+    }
+
+    .sectionImage
+    {
+        width: calc(100% - 30px - 30px);
+        top: 250;
+    }
+
+    .sectionHolderBG.Left .sectionImage
+    {
+        right: 15;
+    }
+
+    .sectionHolderBG.Right .sectionImage
+    {
+        left: 15;
+    }
+
+    .bottomBar
+    {
+        top: 2950;
+    }
 }
 /*#endregion Media 500-400 */
 
 /*#region Media 350 */
 @media screen and (max-width: 350px)
 {
+    .ballImage
+    {
+        width: 250px;
+        height: 250px;
+        left: calc(50% - 125px);
+    }
 
+    .ballRing
+    {
+        width: 350px;
+        height: 350px;
+        top: 150;
+        left: calc(50% - 175px);
+
+        width: 200px;
+        height: 200px;
+        top: 225;
+        left: calc(50% - 100px);
+    }
+
+    @keyframes ballRingAnimation
+    {
+        0%
+        {
+            width: 200px;
+            height: 200px;
+            top: 225;
+            left: calc(50% - 100px);
+        }
+
+        25%
+        {
+            width: 600px;
+            height: 600px;
+            top: 50;
+            left: calc(50% - 300px);
+            opacity: 0;
+        }
+
+        50%
+        {
+            width: 400px;
+            height: 400px;
+            top: 125;
+            left: calc(50% - 200px);
+            opacity: .3;
+        }
+
+        75%
+        {
+            width: 700px;
+            height: 700px;
+            top: 0;
+            left: calc(50% - 350px);
+            opacity: 0;
+        }
+
+        100%
+        {
+            width: 200px;
+            height: 200px;
+            top: 225;
+            left: calc(50% - 100px);
+        }
+    }
+
+    .pageNumber
+    {
+        top: 600;
+        bottom: auto;
+    }
 }
 /*#endregion Media 350 */
