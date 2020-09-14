@@ -8,8 +8,8 @@
         <link rel = "icon" href = "Images/Logo.png" type = "image" sizes = "16x16">
 
         <meta charset = "utf-8">
-        <meta name = "description" content = "This is a website for ...">
-        <meta name = "keywords" content = "..., ...">
+        <meta name = "description" content = "The place where I introduce myself and upload my projects. Check out any of my games or apps. Otherwise, look for useful information and help in C#, HTML or CSS.">
+        <meta name = "keywords" content = "Programming, C#, HTML, CSS, Kristiyan, Valchev, Games, Apps, Help">
         <meta name = "author" content = "Kristiyan Valchev">
         <meta name = "viewport" content = "width = device-width, user-scalable = no, initial-scale = 1">
         
@@ -19,8 +19,10 @@
         <title>Mr. You Development</title>
     </head>
 
-    <body id = "body" onclick="showCoords(event)">
+    <body id = "body" onclick = "showCoords(event)">
         <!-- #region Loader -->
+        <img src = "Images/linkImages/mainPage.png" alt = "Link image" style = "display: none;">
+
         <div class = "Loader">
             <div class = "Shadow"><p>L</p><p>O</p><p>A</p><p>D</p><p>I</p><p>N</p><p>G</p></div>
             <div class = "Fifth"><p>L</p><p>O</p><p>A</p><p>D</p><p>I</p><p>N</p><p>G</p></div>
@@ -46,7 +48,7 @@
 		</script>
         <!-- #endregion Loader -->
 
-        <div class = "backGround"></div>
+        <div class = "backGround Home"></div>
         
         <!-- #region Stars -->
         <div class = "starsHolder">
@@ -90,10 +92,10 @@
         <!-- #endregion Stars -->
         
         <div class = "topBar">
-            <a href = "index.html" class = "Logo"><img src = "Images/Logo.png">DEV</a>
+            <a href = "index.html" class = "Logo"><img src = "Images/Logo.png" alt = "Logo">DEV</a>
             <a href = "#">PROJECTS</a>
             <a href = "#">LEARN</a>
-            <a href = "#">ABOUT</a>
+            <a href = "otherPages/About.html">ABOUT</a>
             <a href = "index.html" class = "Active">HOME</a>
 
             <a onclick = "openSideMenu()" class = "threeLineButton">
@@ -109,13 +111,13 @@
                 <div></div>
             </a>
 
-            <a href = "#" class = "Active"><div></div> HOME <div></div></a>
-            <a href = "#"><div></div> ABOUT <div></div></a>
+            <a href = "index.html" class = "Active"><div></div> HOME <div></div></a>
+            <a href = "otherPages/About.html"><div></div> ABOUT <div></div></a>
             <a href = "#"><div></div> LEARN <div></div></a>
             <a href = "#"><div></div> PROJECTS <div></div></a>
         </div>
 
-        <img src = "Images/mainPageBall.png" class = "ballImage">
+        <img src = "Images/mainPageBall.png" alt = "Cool loking ball with light" class = "ballImage">
         <div class = "ballRing"></div>
 
         <h1 class = "Title">MR. YOU</h1>
@@ -135,7 +137,7 @@
     
                     <a href = "#" class = "sectionButton"><i class = "fas fa-angle-double-right"></i></a>
                 </div>
-                <img src = "Images/aboutTitleImage.jpg" class = "sectionImage">
+                <img src = "Images/aboutTitleImage.jpg" alt = "About image" class = "sectionImage">
             </div>
 
             <div class = "sectionHolderBG Right Learn">
@@ -143,12 +145,12 @@
                     <h1 class = "sectionTitle">LEARN <div></div></h1>
                     <p class = "sectionText">
                         Here you can check and learn new codes in C#, HTML or CSS. I
-                        hope you also check the exercises after you learned the new techniks.
+                        hope you also check the exercises after you learned the new technics.
                     </p>
     
                     <a href = "#" class = "sectionButton"><i class = "fas fa-angle-double-right"></i></a>
                 </div>
-                <img src = "Images/learnTitleImage.jpg" class = "sectionImage">
+                <img src = "Images/learnTitleImage.jpg" alt = "Learn image" class = "sectionImage">
             </div>
 
             <div class = "sectionHolderBG Left Projects">
@@ -162,13 +164,13 @@
     
                     <a href = "#" class = "sectionButton"><i class = "fas fa-angle-double-right"></i></a>
                 </div>
-                <img src = "Images/projectsTitleImage.jpg" class = "sectionImage">
+                <img src = "Images/projectsTitleImage.jpg" alt = "Projects image" class = "sectionImage">
             </div>
         </div>
 
         <div class = "bottomBar">
             <div class = "directionButton H"><a href = "index.html" class = "Active">HOME</a></div>
-            <div class = "directionButton A"><a href = "#">ABOUT</a></div>
+            <div class = "directionButton A"><a href = "otherPages/About.html">ABOUT</a></div>
             <div class = "directionButton L"><a href = "#">LEARN</a></div>
             <div class = "directionButton P"><a href = "#">PROJECTS</a></div>
 
