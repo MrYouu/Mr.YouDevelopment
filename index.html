@@ -42,13 +42,16 @@
 
             window.addEventListener("load", function ()
 			{
-				const Loader = document.querySelector(".Loader")
-				Loader.className += " hidden";
+                const Loader = document.querySelector(".Loader")
+                Loader.className += " hidden";
             });
 		</script>
         <!-- #endregion Loader -->
 
         <div class = "backGround Home"></div>
+        <div class = "redirectionButtonAnimationBox a01" id = "redirectionButton01"></div>
+        <div class = "redirectionButtonAnimationBox a02" id = "redirectionButton02"></div>
+        <div class = "redirectionButtonAnimationBox a03" id = "redirectionButton03"></div>
         
         <!-- #region Stars -->
         <div class = "starsHolder">
@@ -135,7 +138,7 @@
                         and help in C#, HTML or CSS.
                     </p>
     
-                    <a href = "#" class = "sectionButton"><i class = "fas fa-angle-double-right"></i></a>
+                    <a onclick = "redirectionButtonAnimation()" class = "sectionButton"><i class = "fas fa-angle-double-right"></i></a>
                 </div>
                 <img src = "Images/aboutTitleImage.jpg" alt = "About image" class = "sectionImage">
             </div>
