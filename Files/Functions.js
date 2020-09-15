@@ -19,6 +19,26 @@ function closeSideMenu()
     document.getElementById("sideMenu").style.transform = "translateX(100%)";
 }
 
+function redirectionButtonAnimation()
+{
+    document.getElementById("redirectionButton01").style.height = "100%";
+
+    setTimeout(function ()
+    {
+        document.getElementById("redirectionButton02").style.height = "100%";
+    }, 100);
+
+    setTimeout(function ()
+    {
+        document.getElementById("redirectionButton03").style.height = "100%";
+    }, 200);
+
+    setTimeout(function ()
+    {
+        location.replace("../otherPages/About.html")
+    }, 500);
+}
+
 function defaultFunction()
 {
 

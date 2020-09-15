@@ -29,13 +29,11 @@ body
 ::-webkit-scrollbar-track
 {
     background-color: #090d19;
-    border-radius: 70px;
 }
 
 ::-webkit-scrollbar-thumb
 {
 	background: #e5e5e580;
-	border-radius: 70px;
 }
 
 ::-webkit-scrollbar-thumb:hover
@@ -53,12 +51,12 @@ body
 	height: 100%;
 	top: 0;
 	left: 0;
-	background-color: #081829;
+	background-color: #090d19;
 	justify-content: center;
 	align-items: center;
     overflow: hidden;
     
-	z-index: 99;
+    z-index: 99;
 }
 
 .Loader div
@@ -213,7 +211,7 @@ body
 .Loader.hidden
 {
 	animation: fadeOutt 1s;
-	animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
 	overflow-y: visible;
 }
 
@@ -552,6 +550,32 @@ body
                       radial-gradient(circle at 0% 35%, #D273FF80 0px, transparent 40%);
 }
 
+.redirectionButtonAnimationBox
+{
+    position: fixed;
+    width: 100%;
+    height: 0%;
+    top: 0;
+    left: 0;
+
+    z-index: 90;
+}
+
+.redirectionButtonAnimationBox.a01
+{
+    background-color: #090d19;
+}
+
+.redirectionButtonAnimationBox.a02
+{
+    background-color: #e5e5e5;
+}
+
+.redirectionButtonAnimationBox.a03
+{
+    background-color: #090d19;
+}
+
 .ballImage
 {
     position: absolute;
@@ -559,7 +583,6 @@ body
     height: 400px;
     top: 200;
     left: calc(50% - 200px);
-    filter: blur(.2px);
 
     animation: dropDown .5s ease-out forwards .9s;
     transform: translateY(-50px);
@@ -812,6 +835,167 @@ body
 }
 /*#endregion Page parts */
 
+/*#region Cards */
+.cardHolder
+{
+    position: relative;
+    width: 100%;
+    height: 420px;
+    background-color: transparent;
+    margin-bottom: 200px;
+}
+
+.Card
+{
+    position: absolute;
+    top: 0;
+    width: calc(100% - 300px);
+    height: 420px;
+    background-color: #343849;
+    box-shadow: 10px 10px 20px #00000080;
+}
+
+.Card.Left
+{
+    left: 0;
+    margin-right: 300px;
+}
+
+.Card.Right
+{
+    float: right;
+    right: 0;
+    margin-left: 300px;
+}
+
+.Card .cardData
+{
+    position: absolute;
+    top: 15;
+    font-size: 16px;
+    font-weight: normal;
+    text-align: right;
+    line-height: 16px;
+    color: #e5e5e580;
+}
+
+.Card.Left .cardData
+{
+    float: right;
+    right: 15;
+}
+
+.Card.Right .cardData
+{
+    left: 15;
+}
+
+.Card .cardTitle
+{
+    position: absolute;
+    width: calc(100% - 240px - 400px);
+    top: 60;
+    font-size: 36px;
+    font-weight: normal;
+    line-height: 36px;
+    color: #e5e5e5;
+}
+
+.Card.Left .cardTitle
+{
+    left: 120;
+}
+
+.Card.Right .cardTitle
+{
+    float: right;
+    right: 120;
+    text-align: right;
+}
+
+.Card .cardTitle div
+{
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: -10;
+    left: 0;
+    background-color: #e5e5e5;
+    opacity: .7;
+}
+
+.Card .cardText
+{
+    position: absolute;
+    width: calc(100% - 240px - 400px);
+    top: 120;
+    font-size: 20px;
+    font-weight: 100;
+    line-height: 24px;
+    color: #e5e5e5;
+}
+
+.Card.Left .cardText
+{
+    left: 120;
+}
+
+.Card.Right .cardText
+{
+    float: right;
+    right: 120;
+    text-align: right;
+}
+
+.Card .cardImage
+{
+    position: absolute;
+    max-width: 600px;
+    max-height: 400px;
+    bottom: -100;
+}
+
+.Card.Left .cardImage
+{
+    float: right;
+    right: -200;
+}
+
+.Card.Right .cardImage
+{
+    float: right;
+    left: -200;
+}
+
+.Card a.cardButton
+{
+    position: absolute;
+    bottom: 30;
+    font-size: 18px;
+    font-weight: bolder;
+    text-align: center;
+    line-height: 22px;
+    background-color: #090d19;
+    padding: 12px 30px;
+}
+
+.Card.Left a.cardButton
+{
+    float: right;
+    right: 430;
+}
+
+.Card.Right a.cardButton
+{
+    left: 430;
+}
+
+.Card a.cardButton:hover
+{
+    padding: 12px 35px;
+}
+/*#endregion Cards */
+
 /*#region Stars */
 #mouseCoordinatesText
 {
@@ -830,6 +1014,7 @@ body
     top: 0;
     left: 0;
     background-color: transparents;
+    overflow: hidden;
 
     z-index: -2;
 
@@ -1158,6 +1343,11 @@ body
     background-color: #060d14;
 }
 
+.bottomBar.aboutPage
+{
+    top: 6000;
+}
+
 .bottomBar .directionButton
 {
     position: absolute;
@@ -1260,6 +1450,10 @@ img
     user-select: none;
     -webkit-user-drag: none;
     -webkit-touch-callout: none;
+    color: #e5e5e5;
+    transition: ease .3s;
+    padding: 0;
+    margin: 0;
 }
 
 a
