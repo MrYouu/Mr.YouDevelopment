@@ -589,6 +589,17 @@ body
     opacity: 0;
 }
 
+.ballRingHolder
+{
+    position: absolute;
+    width: 100%;
+    height: 1000px;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    overflow: hidden;
+}
+
 .ballRing
 {
     position: absolute;
