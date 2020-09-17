@@ -20,6 +20,18 @@ body
     overflow-x: hidden;
 }
 
+body::before
+{
+    content: "";
+    position: fixed;
+    top: -20;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    box-shadow: 0px 0px 30px #000000;
+    z-index: 100;
+}
+
 /*#region Scrow bar */
 ::-webkit-scrollbar
 {
@@ -311,6 +323,11 @@ body
     opacity: 0;
 }
 
+.topBar.Learn a
+{
+    color: #090d19;
+}
+
 .topBar a::before
 {
     content: "";
@@ -324,6 +341,11 @@ body
     transform: scaleX(0);
     
     transition: ease .3s;
+}
+
+.topBar.Learn a::before
+{
+    background-color: #090d19;
 }
 
 .topBar a:hover::before, .topBar a.Logo:hover::before
@@ -369,6 +391,74 @@ body
     font-weight: normal;
 }
 
+.topBar div.hasDropdown
+{
+    float: right;
+    position: relative;
+    width: auto;
+    height: 30px;
+    top: 45;
+    right: 30;
+
+    z-index: 5;
+}
+
+.topBar div.hasDropdown a
+{
+    top: 0;
+    right: 0;
+    padding-bottom: 5px;
+}
+
+.topBar div.hasDropdown .dropDownMenu
+{
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 35;
+    left: 0;
+    background-image: linear-gradient(to bottom, #090d19, transparent);
+
+    animation: popUp .3s ease-out forwards;
+    transform: translateY(50px);
+    opacity: 0;
+}
+
+.topBar div.hasDropdown:hover .dropDownMenu, .dropDownMenu:hover
+{
+    display: block;
+}
+
+.topBar div.hasDropdown .dropDownMenu a
+{
+    float: left;
+    position: relative;
+    top: 10;
+    left: 0;
+    right: auto;
+    color: #e5e5e5;
+    margin-bottom: 15px;
+
+    animation: fadeIn .3s ease-out forwards .2s;
+    opacity: 0;
+}
+
+.topBar div.hasDropdown .dropDownMenu a:nth-last-child(1)
+{
+    margin-bottom: 20px;
+}
+
+.topBar div.hasDropdown .dropDownMenu a:hover
+{
+    letter-spacing: 2px;
+}
+
+.topBar div.hasDropdown .dropDownMenu a.Active
+{
+    font-weight: normal;
+}
+
 .topBar a.threeLineButton
 {
     display: none;
@@ -386,6 +476,11 @@ body
     height: 1px;
     right: 0;
     background-color: #e5e5e5;
+}
+
+.topBar.Learn a.threeLineButton div
+{
+    background-color: #090d19;
 }
 
 .topBar a.threeLineButton div:nth-child(1)
@@ -411,7 +506,7 @@ body
     width: 100%;
 }
 
-.topBar a.threeLineButton:hover::before
+.topBar a.threeLineButton:hover::before, .topBar div.hasDropdown .dropDownMenu a:hover::before
 {
     visibility: hidden;
 }
@@ -527,7 +622,7 @@ body
 {
     position: absolute;
     width: 100%;
-    height: 1000px;
+    height: 1500px;
     top: 0;
     left: 0;
 
@@ -548,6 +643,13 @@ body
     background-image: radial-gradient(circle at 50% 0%, #4b5063 100px, transparent 80%),
                       radial-gradient(circle at 100% 0%, #ADFF67b0 0px, transparent 40%),
                       radial-gradient(circle at 0% 35%, #D273FF80 0px, transparent 40%);
+}
+
+.backGround.Learn
+{
+    background-image: radial-gradient(circle at 50% 0%, #FBFFA8 100px, transparent 60%),
+                      radial-gradient(circle at 100% 0%, #FF0100 0px, transparent 60%),
+                      radial-gradient(circle at -20% 15%, #37FFFEa0 0px, transparent 40%);
 }
 
 .redirectionButtonAnimationBox
@@ -790,6 +892,12 @@ body
     color: #e5e5e5;
 }
 
+.sectionHolderBG.Learn .sectionHolder .sectionText a
+{
+    color: #028bc2;
+    filter: brightness(5);
+}
+
 .sectionHolder a.sectionButton
 {
     float: right;
@@ -814,7 +922,7 @@ body
     position: absolute;
     width: calc(50% + 60px);
     top: 80;
-    background-color: #343849;
+    background-color: transparent;
     box-shadow: 10px 10px 20px #00000080;
     filter: brightness(.9);
 
@@ -904,7 +1012,7 @@ body
 .Card .cardTitle
 {
     position: absolute;
-    width: calc(100% - 240px - 400px);
+    width: calc(100% - 240px);
     top: 60;
     font-size: 36px;
     font-weight: normal;
@@ -974,7 +1082,6 @@ body
 
 .Card.Right .cardImage
 {
-    float: right;
     left: -200;
 }
 
@@ -1006,6 +1113,103 @@ body
     padding: 12px 35px;
 }
 /*#endregion Cards */
+
+/*#region Boxes */
+.boxHolderX3
+{
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background-color: transparent;
+    margin-bottom: 200px;
+}
+
+.boxHolderX3 .boxeBG
+{
+    position: absolute;
+    height: 100%;
+    background-color: #343849;
+    box-shadow: 10px 10px 20px #00000080;
+}
+
+.boxHolderX3 .boxeBG:nth-child(1)
+{
+    width: calc(33% - 60px - 30px);
+    top: 0;
+    left: 60;
+}
+
+.boxHolderX3 .boxeBG:nth-child(2)
+{
+    width: calc(33% - 30px - 30px);
+    top: 0;
+    left: calc(50% - (33% - 30px - 30px) / 2);
+}
+
+.boxHolderX3 .boxeBG:nth-child(3)
+{
+    float: right;
+    width: calc(33% - 30px - 60px);
+    top: 0;
+    right: 60;
+}
+
+.boxHolderX3 .boxeBG .boxImage
+{
+    position: absolute;
+    width: 100px;
+    top: 30;
+    left: calc(50% - 50px);
+}
+
+.boxHolderX3 .boxeBG .boxTitle
+{
+    position: absolute;
+    width: calc(100% - 60px);
+    top: 160;
+    left: 30;
+    font-size: 32px;
+    font-weight: normal;
+    text-align: center;
+    line-height: 32px;
+    color: #e5e5e5;
+}
+
+.boxHolderX3 .boxeBG .boxText
+{
+    position: absolute;
+    width: calc(100% - 60px);
+    height: auto;
+    top: 220;
+    left: 30;
+    font-size: 20px;
+    font-weight: 100;
+    text-align: center;
+    list-style: 24px;
+    color: #e5e5e5;
+}
+
+.boxHolderX3 .boxeBG .boxButton
+{
+    position: absolute;
+    width: 200px;
+    height: 50px;
+    bottom: 30;
+    left: calc(50% - 100px);
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 50px;
+    color: #e5e5e5;
+    background-color: #090d19;
+}
+
+.boxHolderX3 .boxeBG .boxButton:hover
+{
+    width: 220;
+    left: calc(50% - 110px);
+}
+/*#endregion Boxes */
 
 /*#region Stars */
 #mouseCoordinatesText
@@ -1356,7 +1560,12 @@ body
 
 .bottomBar.aboutPage
 {
-    top: 6000;
+    top: 5300;
+}
+
+.bottomBar.LearnPage
+{
+    top: 2800;
 }
 
 .bottomBar .directionButton
@@ -1484,6 +1693,21 @@ p, div, h1, h2, h3, h4, h5, h6, i, img
     transition: ease .3s;
 }
 
+.contentSoon
+{
+    position: relative;
+    width: calc(100% - 60px);
+    top: 0;
+    left: 30;
+    background-color: #343849;
+
+    font-size: 20px;
+    font-weight: normal;
+    text-align: center;
+    line-height: 90px;
+    color: #e5e5e5;
+}
+
 /*#region Animations */
 @keyframes backGroundAnimation
 {
@@ -1561,6 +1785,21 @@ p, div, h1, h2, h3, h4, h5, h6, i, img
     }
 }
 
+@keyframes popUp
+{
+    0%
+    {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    100%
+    {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
 @keyframes fadeIn
 {
     0% { opacity: 0; }
@@ -1593,9 +1832,77 @@ p, div, h1, h2, h3, h4, h5, h6, i, img
 
 }
 
+@media screen and (max-width: 1250px)
+{
+    .Card .cardTitle
+    {
+        width: calc(100% - 120px);
+    }
+
+    .Card .cardText
+    {
+        width: calc(100% - 120px);
+    }
+
+    .Card.Left .cardTitle, .Card.Left .cardText
+    {
+        left: 60;
+    }
+
+    .Card.Right .cardTitle, .Card.Right .cardText
+    {
+        right: 60;
+    }
+
+    .Card .cardImage
+    {
+        max-width: 500px;
+        max-height: 300px;
+    }
+
+    .Card.Left a.cardButton
+    {
+        right: 330;
+    }
+
+    .Card.Right a.cardButton
+    {
+        left: 330;
+    }
+}
+
 @media screen and (max-width: 1200px)
 {
+    .boxHolderX3 .boxeBG:nth-child(1)
+    {
+        width: calc(33% - 30px - 15px);
+        left: 30;
+    }
+    
+    .boxHolderX3 .boxeBG:nth-child(2)
+    {
+        width: calc(33% - 15px - 15px);
+        left: calc(50% - (33% - 15px - 15px) / 2);
+    }
+    
+    .boxHolderX3 .boxeBG:nth-child(3)
+    {
+        float: right;
+        width: calc(33% - 15px - 30px);
+        right: 30;
+    }
 
+    .boxHolderX3 .boxeBG .boxTitle
+    {
+        width: calc(100% - 30px);
+        left: 15;
+    }
+
+    .boxHolderX3 .boxeBG .boxText
+    {
+        width: calc(100% - 30px);
+        left: 15;
+    }
 }
 
 @media screen and (max-width: 1100px)
@@ -1618,6 +1925,16 @@ p, div, h1, h2, h3, h4, h5, h6, i, img
     .bottomBar
     {
         top: 3500;
+    }
+
+    .bottomBar.aboutPage
+    {
+        top: 5200;
+    }
+
+    .bottomBar.LearnPage
+    {
+        top: 2600;
     }
 }
 
@@ -1648,6 +1965,103 @@ p, div, h1, h2, h3, h4, h5, h6, i, img
     .pageNumber
     {
         right: 30;
+    }
+
+    .Card
+    {
+        width: calc(100% - 130px);
+    }
+
+    .Card .cardTitle
+    {
+        top: 60;
+        font-size: 30px;
+        line-height: 30px;
+    }
+
+    .Card .cardText
+    {
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .Card .cardTitle
+    {
+        width: calc(100% - 60px);
+    }
+
+    .Card .cardText
+    {
+        width: calc(100% - 60px);
+    }
+
+    .Card.Left .cardTitle, .Card.Left .cardText
+    {
+        left: 30;
+    }
+
+    .Card.Right .cardTitle, .Card.Right .cardText
+    {
+        right: 30;
+    }
+
+    .Card .cardImage
+    {
+        max-width: 350px;
+        max-height: 200px;
+    }
+
+    .Card.Left .cardImage
+    {
+        right: -100;
+    }
+
+    .Card.Right .cardImage
+    {
+        left: -100;
+    }
+
+    .Card.Left a.cardButton
+    {
+        float: left;
+        left: 30;
+        right: auto;
+    }
+
+    .Card.Right a.cardButton
+    {
+        float: right;
+        left: auto;
+        right: 30;
+    }
+
+    .boxHolderX3
+    {
+        height: 1700px;
+    }
+
+    .boxHolderX3 .boxeBG:nth-child(1), .boxHolderX3 .boxeBG:nth-child(2), .boxHolderX3 .boxeBG:nth-child(3)
+    {
+        float: left;
+        width: calc(100% - 120px);
+        height: 500px;
+        top: 0;
+        left: 60;
+    }
+
+    .boxHolderX3 .boxeBG:nth-child(2)
+    {
+        top: 600;
+    }
+
+    .boxHolderX3 .boxeBG:nth-child(3)
+    {
+        top: 1200;
+    }
+
+    .bottomBar.LearnPage
+    {
+        top: 3800;
     }
 }
 
@@ -1710,6 +2124,13 @@ p, div, h1, h2, h3, h4, h5, h6, i, img
         background-image: radial-gradient(circle at 50% 0%, #4b5063 0px, transparent 60%),
                         radial-gradient(circle at 100% 20%, #ADFF67b0 0px, transparent 40%),
                         radial-gradient(circle at 0% 35%, #D273FFa0 0px, transparent 40%);
+    }
+
+    .backGround.Learn
+    {
+        background-image: radial-gradient(circle at 50% 0%, #FBFFA8 0px, transparent 30%),
+                        radial-gradient(circle at 100% 15%, #FF0100 0px, transparent 30%),
+                        radial-gradient(circle at 0% 20%, #37FFFE 0px, transparent 30%);
     }
 
     .ballImage
@@ -1848,6 +2269,67 @@ p, div, h1, h2, h3, h4, h5, h6, i, img
 /*#endregion Media 700-600 */
 
 /*#region Media 500-400 */
+@media screen and (max-width: 530px)
+{
+    .cardHolder
+    {
+        margin-bottom: 300px;
+    }
+
+    .Card
+    {
+        width: calc(100% - 60px);
+    }
+
+    .Card .cardImage
+    {
+        max-width: 300px;
+        max-height: 200px;
+        top: 390;
+        bottom: auto;
+    }
+
+    .Card.Left .cardImage
+    {
+        float: left;
+        left: 30;
+        right: auto;
+    }
+
+    .Card.Right .cardImage
+    {
+        float: right;
+        left: auto;
+        right: 30;
+    }
+
+    .Card a.cardButton
+    {
+        bottom: 60;
+        background-color: #e5e5e5;
+        color: #090d19;
+    }
+
+    .Card.Left a.cardButton
+    {
+        float: left;
+        left: 30;
+        right: auto;
+    }
+
+    .Card.Right a.cardButton
+    {
+        float: right;
+        left: auto;
+        right: 30;
+    }
+
+    .bottomBar.aboutPage
+    {
+        top: 5400;
+    }
+}
+
 @media screen and (max-width: 500px)
 {
     .backGround
@@ -1884,11 +2366,47 @@ p, div, h1, h2, h3, h4, h5, h6, i, img
         top: 250;
     }
 
+    .Card .cardText.Longer
+    {
+        top: 150;
+    }
+
+    .boxHolderX3 .boxeBG:nth-child(1), .boxHolderX3 .boxeBG:nth-child(2), .boxHolderX3 .boxeBG:nth-child(3)
+    {
+        width: calc(100% - 60px);
+        left: 30;
+    }
+
+    .boxHolderX3 .boxeBG .boxTitle
+    {
+        font-size: 28px;
+        line-height: 28px;
+    }
+
+    .boxHolderX3 .boxeBG .boxText
+    {
+        top: 210;
+        font-size: 16px;
+        list-style: 20px;
+    }
+
+    .boxHolderX3 .boxeBG .boxButton
+    {
+        height: 40px;
+        font-size: 20px;
+        line-height: 40px;
+    }
+
     /*#region Bottom bar */
     .bottomBar
     {
         height: 320px;
         top: 3200;
+    }
+
+    .bottomBar.LearnPage
+    {
+        top: 3700;
     }
 
     .bottomBar .directionButton
@@ -1996,9 +2514,40 @@ p, div, h1, h2, h3, h4, h5, h6, i, img
         left: 15;
     }
 
+    .Card .cardTitle
+    {
+        font-size: 22px;
+        line-height: 22px;
+    }
+
+    .Card .cardImage
+    {
+        max-width: 260px;
+    }
+
+    .Card .cardText
+    {
+        top: 110;
+    }
+
+    .Card .cardText.Longer
+    {
+        top: 130;
+    }
+
     .bottomBar
     {
         top: 2950;
+    }
+
+    .bottomBar.aboutPage
+    {
+        top: 5300;
+    }
+
+    .bottomBar.LearnPage
+    {
+        top: 3600;
     }
 }
 /*#endregion Media 500-400 */
