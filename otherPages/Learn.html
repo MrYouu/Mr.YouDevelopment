@@ -8,7 +8,7 @@
         <link rel = "icon" href = "../Images/Logo.png" type = "image" sizes = "16x16">
 
         <meta charset = "utf-8">
-        <meta name = "description" content = "Other known as Kristiyan Valchev. That's me - seventeen years old back-end C# developer and front-end HTML and CSS programmer. Take a look at ...">
+        <meta name = "description" content = "Here you can check and learn new codes in C#, HTML or CSS. I hope you also check the exercises after you learned the new technics. Take a try...">
         <meta name = "keywords" content = "Programming, C#, HTML, CSS, Kristiyan, Valchev, Games, Apps, Help">
         <meta name = "author" content = "Kristiyan Valchev">
         <meta name = "viewport" content = "width = device-width, user-scalable = no, initial-scale = 1">
@@ -16,12 +16,12 @@
         <script type = "text/javascript" src = "../Files/Functions.js"></script>
         <script src = "https://kit.fontawesome.com/190623e0b3.js" crossorigin = "anonymous"></script>
 
-        <title>About Mr. You</title>
+        <title>Learn Mr. You</title>
     </head>
 
     <body id = "body">
         <!-- #region Loader -->
-        <img src = "../Images/linkImages/aboutPage.png" alt = "Link image" style = "display: none;">
+        <img src = "../Images/linkImages/learnPage.png" alt = "Link image" style = "display: none;">
 
         <div class = "Loader">
             <div class = "Shadow"><p>L</p><p>O</p><p>A</p><p>D</p><p>I</p><p>N</p><p>G</p></div>
@@ -33,7 +33,7 @@
         </div>
 
         <script>
-            function toPortfolio()
+            function toLanguagesPage()
             {
                 window.scroll(
                 {
@@ -56,7 +56,7 @@
 		</script>
         <!-- #endregion Loader -->
 
-        <div class = "backGround About"></div>
+        <div class = "backGround Learn"></div>
         <div class = "redirectionButtonAnimationBox a01" id = "redirectionButton01"></div>
         <div class = "redirectionButtonAnimationBox a02" id = "redirectionButton02"></div>
         <div class = "redirectionButtonAnimationBox a03" id = "redirectionButton03"></div>
@@ -102,18 +102,18 @@
         </div>
         <!-- #endregion Stars -->
         
-        <div class = "topBar">
+        <div class = "topBar Learn">
             <a onclick = "toHomePage()" class = "Logo"><img src = "../Images/Logo.png" alt = "Logo">DEV</a>
             <a onclick = "toProjectsPage()">PROJECTS</a>
             <div class = "hasDropdown">
-                <a onclick = "toLearnPage()">LEARN</a>
+                <a href = "Learn.html" class = "Active">LEARN</a>
                 <div class = "dropDownMenu">
                     <a onclick = "toLearnCSharpPage()">C#</a>
                     <a onclick = "toLearnHTMLPage()">HTML</a>
                     <a onclick = "toLearnCSSPage()">CSS</a>
                 </div>
             </div>
-            <a href = "About.html" class = "Active">ABOUT</a>
+            <a onclick = "toAboutPage()">ABOUT</a>
             <a onclick = "toHomePage()">HOME</a>
 
             <a onclick = "openSideMenu()" class = "threeLineButton">
@@ -130,116 +130,70 @@
             </a>
 
             <a onclick = "toHomePage()"><div></div> HOME <div></div></a>
-            <a href = "About.html" class = "Active"><div></div> ABOUT <div></div></a>
-            <a onclick = "toLearnPage()"><div></div> LEARN <div></div></a>
+            <a onclick = "toAboutPage()"><div></div> ABOUT <div></div></a>
+            <a href = "Learn.html" class = "Active"><div></div> LEARN <div></div></a>
             <a onclick = "toProjectsPage()"><div></div> PROJECTS <div></div></a>
         </div>
 
-        <img src = "../Images/aboutPageBall.png" alt = "Cool loking ball with light" class = "ballImage">
+        <img src = "../Images/learnPageBall.png" alt = "Cool loking ball with light" class = "ballImage">
         <div class = "ballRingHolder"><div class = "ballRing"></div></div>
 
-        <h1 class = "Title">ABOUT</h1>
-        <h3 class = "subTitle">ME</h3>
+        <h1 class = "Title">LEARN</h1>
+        <h3 class = "subTitle">PROGRAMMING</h3>
 
-        <p class = "pageNumber">02</p>
+        <p class = "pageNumber">03</p>
 
         <div class = "pageContent">
-            <div class = "sectionHolderBG Left">
+            <div class = "sectionHolderBG Left Learn">
                 <div class = "sectionHolder">
-                    <h1 class = "sectionTitle">PORTFOLIO <div></div></h1>
+                    <h1 class = "sectionTitle">KNOWLEDGE <div></div></h1>
                     <p class = "sectionText">
-                        Here you will see all of my work and achievements that I made over the years.
-                        Everything started back in the summer of 2017 when I was 14-years-old.
-                    </p>
-
-                    <a onclick = "toPortfolio()" class = "sectionButton"><i class = "fas fa-angle-double-right"></i></a>
-                </div>
-                <img src = "../Images/aboutPage/portfolioTextImage.jpg" alt = "" class = "sectionImage">
-            </div>
-
-            <div class = "cardHolder">
-                <div class = "Card Left">
-                    <h6 class = "cardData">15.09.2020</h6>
-                    <h1 class = "cardTitle">This Website <div></div></h1>
-                    <p class = "cardText">
-                        This is my personal website. As you can see, a lot of time is invested
-                        befour you can be able to see its full glogy. Feel free to look around
-                        and even suggest something.
+                        Here you can gain additional programming skills in C#, HTML or CSS. Next
+                        check the exercises after you learned the new technics and practise them.
                     </p>
     
-                    <a href = "../index.html" class = "cardButton"><i class = "fas fa-angle-double-right"></i></a>
-    
-                    <img src = "../Images/aboutPage/01.png" alt = "Image of this website" class = "cardImage">
+                    <a onclick = "toLanguagesPage()" class = "sectionButton"><i class = "fas fa-angle-double-right"></i></a>
                 </div>
+                <img src = "../Images/learnPage/knowledgeTextImage.jpg" alt = "Learn image" class = "sectionImage">
             </div>
 
-            <div class = "cardHolder">
-                <div class = "Card Right">
-                    <h6 class = "cardData">08.07.2020</h6>
-                    <h1 class = "cardTitle">Krameks Website <div></div></h1>
-                    <p class = "cardText">
-                        This is a custom website I made for a metal manufactur company. One of my first
-                        website orders.
+            <div class = "boxHolderX3">
+                <div class = "boxeBG">
+                    <img src = "../Images/learnPage/CShIcon.png" alt = "C# Icon" class = "boxImage">
+                    <h1 class = "boxTitle">C#</h1>
+                    <p class = "boxText">
+                        General-purpose, multi-paradigm programming language. Used mainly in making
+                        windows applications and games. Check the 0 tips and tricks.
                     </p>
-
-                    <a href = "http://krameks.eu" class = "cardButton" target = "_blank"><i class = "fas fa-angle-double-right"></i></a>
-
-                    <img src = "../Images/aboutPage/02.png" alt = "Image of krameks.eu website" class = "cardImage">
+                    <a onclick = "toLearnCSharpPage()" class = "boxButton">Start now</a>
                 </div>
-            </div>
 
-            <div class = "cardHolder">
-                <div class = "Card Left">
-                    <h6 class = "cardData">19.10.2019</h6>
-                    <h1 class = "cardTitle">Eco Fisher Game <div></div></h1>
-                    <p class = "cardText">
-                        This is a game that I made with Phoenix Development Company that I was ones
-                        a part of. It's fun little game for kids where the players goal is to cleen the
-                        poluted water.
+                <div class = "boxeBG">
+                    <img src = "../Images/learnPage/HTMLIcon.png" alt = "HTML Icon" class = "boxImage">
+                    <h1 class = "boxTitle">HTML</h1>
+                    <p class = "boxText">
+                        Hypertext Markup Language is the standard markup language for documents
+                        designed to be displayed in a web browser. Check the 0 tips and tricks.
                     </p>
-
-                    <a href = "#" class = "cardButton" target = "_blank"><i class = "fas fa-angle-double-right"></i></a>
-
-                    <img src = "../Images/aboutPage/03.png" alt = "Image of a game coled 'Eco Fisher'" class = "cardImage">
+                    <a href = "#" class = "boxButton">Start now</a>
                 </div>
-            </div>
 
-            <div class = "cardHolder">
-                <div class = "Card Right">
-                    <h6 class = "cardData">19.10.2019</h6>
-                    <h1 class = "cardTitle">FurnView App <div></div></h1>
-                    <p class = "cardText">
-                        This is an application that I made for a furniture company caled IRIM.
-                        The app uses Augmented reality (AR) to visualise the furniture in your
-                        room so you can see how it would look like befour you actually but it.
+                <div class = "boxeBG">
+                    <img src = "../Images/learnPage/CSSIcon.png" alt = "CSS Icon" class = "boxImage">
+                    <h1 class = "boxTitle">CSS</h1>
+                    <p class = "boxText">
+                        Cascading Style Sheets is a style sheet language used for describing the
+                        presentation of a document written in HTML. Check the 0 tips and tricks.
                     </p>
-
-                    <a href = "#" class = "cardButton" target = "_blank"><i class = "fas fa-angle-double-right"></i></a>
-
-                    <img src = "../Images/aboutPage/04.png" alt = "Image of an app coled 'FurnView'" class = "cardImage">
-                </div>
-            </div>
-
-            <div class = "cardHolder">
-                <div class = "Card Left">
-                    <h6 class = "cardData">16.07.2018 - 06.11.2019</h6>
-                    <h1 class = "cardTitle">Several Desktop Games <div></div></h1>
-                    <p class = "cardText Longer">
-                        I made several PC games when I started learning C#, Unity and Blender.
-                        Check all of my games and projects in the Projects section.
-                    </p>
-
-                    <a href = "../otherPages/Projects.html" class = "cardButton" target = "_blank"><i class = "fas fa-angle-double-right"></i></a>
-
-                    <img src = "../Images/aboutPage/05.png" alt = "Image of games and apps" class = "cardImage">
+                    <a href = "#" class = "boxButton">Start now</a>
                 </div>
             </div>
         </div>
 
-        <div class = "bottomBar aboutPage">
+        <div class = "bottomBar learnPage">
             <div class = "directionButton H"><a onclick = "toHomePage()">HOME</a></div>
-            <div class = "directionButton A"><a href = "About.html" class = "Active">ABOUT</a></div>
-            <div class = "directionButton L"><a onclick = "toLearnPage()">LEARN</a></div>
+            <div class = "directionButton A"><a onclick = "toAboutPage()">ABOUT</a></div>
+            <div class = "directionButton L"><a href = "Learn.html" class = "Active">LEARN</a></div>
             <div class = "directionButton P"><a onclick = "toProjectsPage()">PROJECTS</a></div>
 
             <div class = "bottomLinksHolder">
