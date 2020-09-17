@@ -96,9 +96,16 @@
         
         <div class = "topBar">
             <a href = "index.html" class = "Logo"><img src = "Images/Logo.png" alt = "Logo">DEV</a>
-            <a href = "#">PROJECTS</a>
-            <a href = "#">LEARN</a>
-            <a href = "otherPages/About.html">ABOUT</a>
+            <a onclick = "toProjectsPage()">PROJECTS</a>
+            <div class = "hasDropdown">
+                <a onclick = "toLearnPage()">LEARN</a>
+                <div class = "dropDownMenu">
+                    <a onclick = "toLearnCSharpPage()">C#</a>
+                    <a onclick = "toLearnHTMLPage()">HTML</a>
+                    <a onclick = "toLearnCSSPage()">CSS</a>
+                </div>
+            </div>
+            <a onclick = "toAboutPage()">ABOUT</a>
             <a href = "index.html" class = "Active">HOME</a>
 
             <a onclick = "openSideMenu()" class = "threeLineButton">
@@ -115,9 +122,9 @@
             </a>
 
             <a href = "index.html" class = "Active"><div></div> HOME <div></div></a>
-            <a href = "otherPages/About.html"><div></div> ABOUT <div></div></a>
-            <a href = "#"><div></div> LEARN <div></div></a>
-            <a href = "#"><div></div> PROJECTS <div></div></a>
+            <a onclick = "toAboutPage()"><div></div> ABOUT <div></div></a>
+            <a onclick = "toLearnPage()"><div></div> LEARN <div></div></a>
+            <a onclick = "toProjectsPage()"><div></div> PROJECTS <div></div></a>
         </div>
 
         <img src = "Images/mainPageBall.png" alt = "Cool loking ball with light" class = "ballImage">
@@ -138,7 +145,7 @@
                         and help in C#, HTML or CSS.
                     </p>
     
-                    <a onclick = "redirectionButtonAnimation()" class = "sectionButton"><i class = "fas fa-angle-double-right"></i></a>
+                    <a onclick = "toAboutPage()" class = "sectionButton"><i class = "fas fa-angle-double-right"></i></a>
                 </div>
                 <img src = "Images/aboutTitleImage.jpg" alt = "About image" class = "sectionImage">
             </div>
@@ -173,9 +180,9 @@
 
         <div class = "bottomBar">
             <div class = "directionButton H"><a href = "index.html" class = "Active">HOME</a></div>
-            <div class = "directionButton A"><a href = "otherPages/About.html">ABOUT</a></div>
-            <div class = "directionButton L"><a href = "#">LEARN</a></div>
-            <div class = "directionButton P"><a href = "#">PROJECTS</a></div>
+            <div class = "directionButton A"><a onclick = "toAboutPage()">ABOUT</a></div>
+            <div class = "directionButton L"><a onclick = "toLearnPage()">LEARN</a></div>
+            <div class = "directionButton P"><a onclick = "toProjectsPage()">PROJECTS</a></div>
 
             <div class = "bottomLinksHolder">
                 <a href = "https://www.facebook.com/profile.php?id=100023130139405" target = "_blank"><i class = "fab fa-facebook-f"></i></a>
