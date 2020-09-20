@@ -19,7 +19,7 @@
         <title>Mr. You Development</title>
     </head>
 
-    <body id = "body" onclick = "showCoords(event)">
+    <body id = "body" onload = "checkForHiddenPage()"> <!-- onclick = "showCoords(event)" -->
         <!-- #region Loader -->
         <img src = "Images/linkImages/mainPage.png" alt = "Link image" style = "display: none;">
 
@@ -133,7 +133,7 @@
         <h1 class = "Title">MR. YOU</h1>
         <h3 class = "subTitle">DEVELOPMENT</h3>
 
-        <p class = "pageNumber">01</p>
+        <p class = "pageNumber" onclick = "get01OneUp()">01</p>
 
         <div class = "pageContent">
             <div class = "sectionHolderBG Left">
@@ -176,6 +176,24 @@
                 </div>
                 <img src = "Images/projectsTitleImage.jpg" alt = "Projects image" class = "sectionImage">
             </div>
+
+            <div class = "sectionHolderBG Right hiddenPage">
+                <div class = "sectionHolder">
+                    <h1 class = "sectionTitle">HIDDEN PAGE <div></div></h1>
+                    <p class = "sectionText">
+                        To access the hidden page with a lot of ha**ing information and other
+                        cool stuff find the way to unlock it. Good luck
+                    </p>
+                </div>
+                <img src = "Images/hoddenPageTitleImage.png" alt = "Hidden page image" class = "sectionImage">
+            </div>
+        </div>
+
+        <div class = "hoddenPageNotification" id = "hoddenPageNotification">
+            <a onclick = "toHiddenPage()">
+                <h6>CONGRATS</h6>
+                <p>Go to hodden page</p>
+            </a>
         </div>
 
         <div class = "bottomBar">
