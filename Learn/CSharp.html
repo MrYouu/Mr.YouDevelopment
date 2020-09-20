@@ -19,7 +19,7 @@
         <title>Learn C#</title>
     </head>
 
-    <body id = "body">
+    <body id = "body" onload = "checkForHiddenPage()">
         <!-- #region Loader -->
         <img src = "../Images/linkImages/learnPageCSharp.png" alt = "Link image" style = "display: none;">
 
@@ -153,6 +153,13 @@
             </div>
 
             <div class = "contentSoon" style = "height: 500px;">Content Soon...</div>
+        </div>
+
+        <div class = "hoddenPageNotification" id = "hoddenPageNotification">
+            <a onclick = "toHiddenPage()">
+                <h6>CONGRATS</h6>
+                <p>Go to hodden page</p>
+            </a>
         </div>
 
         <div class = "bottomBar learnPage">
