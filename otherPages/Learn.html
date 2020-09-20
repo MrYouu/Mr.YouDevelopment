@@ -19,7 +19,7 @@
         <title>Learn Mr. You</title>
     </head>
 
-    <body id = "body">
+    <body id = "body" onload = "checkForHiddenPage()">
         <!-- #region Loader -->
         <img src = "../Images/linkImages/learnPage.png" alt = "Link image" style = "display: none;">
 
@@ -141,7 +141,7 @@
         <h1 class = "Title">LEARN</h1>
         <h3 class = "subTitle">PROGRAMMING</h3>
 
-        <p class = "pageNumber">03</p>
+        <p class = "pageNumber" onclick = "get04OneUp()">03</p>
 
         <div class = "pageContent">
             <div class = "sectionHolderBG Left Learn">
@@ -188,6 +188,13 @@
                     <a href = "#" class = "boxButton">Start now</a>
                 </div>
             </div>
+        </div>
+
+        <div class = "hoddenPageNotification" id = "hoddenPageNotification">
+            <a onclick = "toHiddenPage()">
+                <h6>CONGRATS</h6>
+                <p>Go to hodden page</p>
+            </a>
         </div>
 
         <div class = "bottomBar learnPage">

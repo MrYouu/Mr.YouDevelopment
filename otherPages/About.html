@@ -19,7 +19,7 @@
         <title>About Mr. You</title>
     </head>
 
-    <body id = "body">
+    <body id = "body" onload = "checkForHiddenPage()">
         <!-- #region Loader -->
         <img src = "../Images/linkImages/aboutPage.png" alt = "Link image" style = "display: none;">
 
@@ -141,7 +141,7 @@
         <h1 class = "Title">ABOUT</h1>
         <h3 class = "subTitle">ME</h3>
 
-        <p class = "pageNumber">02</p>
+        <p class = "pageNumber" onclick = "get02OneUp()">02</p>
 
         <div class = "pageContent">
             <div class = "sectionHolderBG Left">
@@ -234,6 +234,13 @@
                     <img src = "../Images/aboutPage/05.png" alt = "Image of games and apps" class = "cardImage">
                 </div>
             </div>
+        </div>
+
+        <div class = "hoddenPageNotification" id = "hoddenPageNotification">
+            <a onclick = "toHiddenPage()">
+                <h6>CONGRATS</h6>
+                <p>Go to hodden page</p>
+            </a>
         </div>
 
         <div class = "bottomBar aboutPage">
