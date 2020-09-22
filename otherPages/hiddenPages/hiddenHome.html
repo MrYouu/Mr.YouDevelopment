@@ -19,9 +19,9 @@
         <title>Hidden You</title>
     </head>
 
-    <body id = "body" onload = "hideHiddenPageBanner()">
+    <body id = "body" onload = "checkForHiddenPage()">
         <!-- #region Loader -->
-        <img src = "../../Images/linkImages/hoddenPage.png" alt = "Link image" style = "display: none;">
+        <img src = "../../Images/linkImages/hiddenPage.png" alt = "Link image" style = "display: none;">
 
         <div class = "Loader">
             <div class = "Shadow"><p>L</p><p>O</p><p>A</p><p>D</p><p>I</p><p>N</p><p>G</p></div>
@@ -33,6 +33,11 @@
         </div>
 
         <script>
+            var count01 = 0;
+            var count02 = 0;
+            var count04 = 0;
+            var showHiddenPage = false;
+
             window.scroll(
             {
                 top: 0,
@@ -117,18 +122,15 @@
             </a>
 
             <a onclick = "toHomePage()"><div></div> HOME <div></div></a>
-            <a onclick = "toAboutPage()"><div></div> ABOUT <div></div></a>
-            <a onclick = "toLearnPage()"><div></div> LEARN <div></div></a>
-            <a onclick = "toProjectsPage()"><div></div> PROJECTS <div></div></a>
         </div>
 
-        <img src = "../../Images/aboutPageBall.png" alt = "Cool loking ball with light" class = "ballImage">
+        <img src = "../../Images/Hidden/hiddenPageHomeBall.png" alt = "Cool loking ball with light" class = "ballImage">
         <div class = "ballRingHolder"><div class = "ballRing"></div></div>
 
         <h1 class = "Title">HIDDEN</h1>
         <h3 class = "subTitle">PAGE</h3>
 
-        <p class = "pageNumber">666</p>
+        <p class = "pageNumber">何</p>
 
         <div class = "pageContent">
             <div class = "sectionHolderBG Left">
