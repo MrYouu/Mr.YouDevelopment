@@ -652,6 +652,11 @@ body::before
                       radial-gradient(circle at -20% 15%, #37FFFEa0 0px, transparent 40%);
 }
 
+.backGround.hiddenPage
+{
+    background-image: radial-gradient(circle at 50% 0%, #FF0000 0px, transparent 80%);
+}
+
 .redirectionButtonAnimationBox
 {
     position: fixed;
@@ -915,6 +920,11 @@ body::before
     line-height: 22px;
     background-color: #090d19;
     padding: 12px 30px;
+}
+
+.sectionHolder a.sectionButton#HiddenPageButton
+{
+    display: none;
 }
 
 .sectionHolder a.sectionButton:hover
@@ -1557,14 +1567,14 @@ body::before
 {
     display: none;
     position: fixed;
-    width: calc(100% - 60px);
+    width: calc(50% - 30px);
     height: 50px;
     bottom: 30;
     left: 30;
     background-color: #e5e5e5;
 
     animation: popUp .3s ease-out forwards;
-    transform: translateY(50px);
+    transform: translateY(81px);
     opacity: 0;
 }
 
@@ -2245,6 +2255,11 @@ p, div, h1, h2, h3, h4, h5, h6, i, img
                         radial-gradient(circle at 0% 20%, #37FFFE 0px, transparent 30%);
     }
 
+    .backGround.hiddenPage
+    {
+        background-image: radial-gradient(circle at 50% 0%, #FF0000 0px, transparent 60%);
+    }
+
     .ballImage
     {
         width: 300px;
@@ -2525,6 +2540,12 @@ p, div, h1, h2, h3, h4, h5, h6, i, img
         line-height: 40px;
     }
 
+    .hoddenPageNotification
+    {
+        width: calc(60% - 15px);
+        left: 15;
+    }
+
     /*#region Bottom bar */
     .bottomBar
     {
@@ -2753,6 +2774,13 @@ p, div, h1, h2, h3, h4, h5, h6, i, img
     {
         top: 600;
         bottom: auto;
+    }
+
+    .hoddenPageNotification
+    {
+        top: 608;
+        bottom: auto;
+        position: absolute;
     }
 }
 /*#endregion Media 350 */

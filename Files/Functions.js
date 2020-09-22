@@ -97,9 +97,6 @@ function toHiddenPage()
     setTimeout(function ()
     {
         location.replace("../otherPages/hiddenPages/hiddenHome.html")
-        sessionStorage.setItem("count01Saved", 0);
-        sessionStorage.setItem("count02Saved", 0);
-        sessionStorage.setItem("count04Saved", 0);
     }, 500);
 }
 
@@ -151,22 +148,19 @@ function checkForHiddenPage()
     count04 = sessionStorage.getItem("count04Saved");
     showHiddenPage = sessionStorage.getItem("showHiddenPageSave");
 
-    if ((count01 == 2 && count02 == 4 && count04 == 1) || showHiddenPage == true)
+    if ((count01 == 2 && count02 == 4 && count04 == 1) || showHiddenPage)
     {
         showHiddenPage = true;
         sessionStorage.setItem("showHiddenPageSave", showHiddenPage);
 
-        document.getElementById("hoddenPageNotification").style.display = "unset";
-    }
-}
+        if (document.getElementById("hoddenPageNotification") != null)
+            document.getElementById("hoddenPageNotification").style.display = "unset";
 
-function hideHiddenPageBanner()
-{
-    showHiddenPage = sessionStorage.getItem("showHiddenPageSave");
+        if (document.getElementById("HiddenPageButton") != null)
+            document.getElementById("HiddenPageButton").style.display = "unset";
 
-    if (showHiddenPage == true)
-    {
-        document.getElementById("hiddenPageBanner").style.display = "none";
+        if (document.getElementById("hiddenPageBanner") != null)
+            document.getElementById("hiddenPageBanner").style.display = "none";
     }
 }
 
