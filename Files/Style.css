@@ -1690,6 +1690,11 @@ body::before
     top: 2800;
 }
 
+.bottomBar.hiddenDownload
+{
+    top: 2400;
+}
+
 .bottomBar .directionButton
 {
     position: absolute;
@@ -2470,6 +2475,11 @@ p, div, h1, h2, h3, h4, h5, h6, i, img
     .bottomBar.aboutPage
     {
         top: 5400;
+    }
+
+    .bottomBar.hiddenDownload
+    {
+        top: 2500;
     }
 }
 
