@@ -19,6 +19,7 @@ function closeSideMenu()
     document.getElementById("sideMenu").style.transform = "translateX(100%)";
 }
 
+// #region To-links
 function toHomePage()
 {
     toPageAnimation();
@@ -114,7 +115,9 @@ function toPageAnimation()
         document.getElementById("redirectionButton03").style.height = "100%";
     }, 200);
 }
+// #endregion
 
+// #region Hidden page analitics
 var count01 = 0;
 var count02 = 0;
 var count04 = 0;
@@ -148,7 +151,7 @@ function checkForHiddenPage()
     count04 = sessionStorage.getItem("count04Saved");
     showHiddenPage = sessionStorage.getItem("showHiddenPageSave");
 
-    if ((count01 == 2 && count02 == 4 && count04 == 1) || showHiddenPage)
+    if ((count01 == 2 && count02 == 8 && count04 == 1) || showHiddenPage)
     {
         showHiddenPage = true;
         sessionStorage.setItem("showHiddenPageSave", showHiddenPage);
@@ -163,6 +166,56 @@ function checkForHiddenPage()
             document.getElementById("hiddenPageBanner").style.display = "none";
     }
 }
+// #endregion
+
+// #region Change learn boxes
+var newLearnBox, BottomBarText, div;
+
+function changeLearnBox()
+{
+    var oldLearnBox = document.getElementById("learnBoxHolder");
+    oldLearnBox.remove();
+
+    var BottomBar = document.getElementById("bottomBar");
+    BottomBar.remove();
+
+    BottomBarText = document.getElementById("bottomBarHolder").innerHTML;
+
+    var scrollBoxButtons = document.getElementsByClassName("scrollSectionBox");
+    for (i = 0; i < scrollBoxButtons.length; i++)
+        scrollBoxButtons[i].className = "scrollSectionBox";
+}
+
+function changeLearnBoxStart()
+{
+    changeLearnBox()
+    
+    newLearnBox = document.getElementById("learnBoxHolderStart").innerHTML;
+    document.getElementById("pageContent").innerHTML += newLearnBox;
+    document.getElementById("pageContent").innerHTML += BottomBarText;
+    document.getElementById("startButtin").className += " Active";
+}
+
+function changeLearnBoxLinkTag()
+{
+    changeLearnBox()
+    
+    newLearnBox = document.getElementById("learnBoxHolderLinkTag").innerHTML;
+    document.getElementById("pageContent").innerHTML += newLearnBox;
+    document.getElementById("pageContent").innerHTML += BottomBarText;
+    document.getElementById("linkTagButtin").className += " Active";
+}
+
+function changeLearnBoxMetaTag()
+{
+    changeLearnBox()
+    
+    newLearnBox = document.getElementById("learnBoxHolderMetaTag").innerHTML;
+    document.getElementById("pageContent").innerHTML += newLearnBox;
+    document.getElementById("pageContent").innerHTML += BottomBarText;
+    document.getElementById("metaTagButtin").className += " Active";
+}
+// #endregion
 
 function defaultFunction()
 {
