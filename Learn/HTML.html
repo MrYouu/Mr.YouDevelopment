@@ -1,0 +1,259 @@
+<!--The HTML code is property to Mr. You (Kristiyan Valchev) and can only be viewed-->
+<!--If you want to use part of the code, please first contact me: mr.youdevelopment@gmail.com-->
+
+<html id = "html">
+    <head>
+        <link href = "https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap" rel = "stylesheet">
+        <link type = "text/css" rel = "stylesheet" href = "../Files/Style.css">
+        <link rel = "icon" href = "../Images/tabLogo.png" type = "image" sizes = "16x16">
+
+        <meta charset = "utf-8">
+        <meta name = "description" content = "Here you can check and learn new codes in C#, HTML or CSS. I hope you also check the exercises after you learned the new technics. Take a try...">
+        <meta name = "keywords" content = "Programming, C#, HTML, CSS, Kristiyan, Valchev, Games, Apps, Help">
+        <meta name = "author" content = "Kristiyan Valchev">
+        <meta name = "viewport" content = "width = device-width, user-scalable = no, initial-scale = 1">
+        
+        <script type = "text/javascript" src = "../Files/Functions.js"></script>
+        <script src = "https://kit.fontawesome.com/190623e0b3.js" crossorigin = "anonymous"></script>
+
+        <title>Learn HTML</title>
+    </head>
+
+    <body id = "body" onload = "checkForHiddenPage(), randomiseColors()">
+        <!-- #region Loader -->
+        <img src = "../Images/linkImages/learnPageHTML.png" alt = "Link image" style = "display: none;">
+
+        <div class = "Loader">
+            <div class = "Shadow"><p>L</p><p>O</p><p>A</p><p>D</p><p>I</p><p>N</p><p>G</p></div>
+            <div class = "Fifth"><p>L</p><p>O</p><p>A</p><p>D</p><p>I</p><p>N</p><p>G</p></div>
+            <div class = "Fourth"><p>L</p><p>O</p><p>A</p><p>D</p><p>I</p><p>N</p><p>G</p></div>
+            <div class = "Third"><p>L</p><p>O</p><p>A</p><p>D</p><p>I</p><p>N</p><p>G</p></div>
+            <div class = "Second"><p>L</p><p>O</p><p>A</p><p>D</p><p>I</p><p>N</p><p>G</p></div>
+            <div class = "First"><p>L</p><p>O</p><p>A</p><p>D</p><p>I</p><p>N</p><p>G</p></div>
+        </div>
+
+        <script>
+            window.scroll(
+            {
+                top: 0,
+                left: 0,
+                behavior: 'smooth'
+            });
+
+            window.addEventListener("load", function ()
+			{
+				const Loader = document.querySelector(".Loader")
+                Loader.className += " hidden";
+            });
+		</script>
+        <!-- #endregion Loader -->
+
+        <div class = "backGround Learn"></div>
+        <div class = "redirectionButtonAnimationBox a01" id = "redirectionButton01"></div>
+        <div class = "redirectionButtonAnimationBox a02" id = "redirectionButton02"></div>
+        <div class = "redirectionButtonAnimationBox a03" id = "redirectionButton03"></div>
+        
+        <!-- #region Stars -->
+        <div class = "starsHolder">
+            <!-- <h1 id = "mouseCoordinatesText">Cor</h1> -->
+            <div class = "Star a01"></div>
+            <div class = "Star a02"></div>
+            <div class = "Star a03"></div>
+            <div class = "Star a04"></div>
+            <div class = "Star a05"></div>
+            <div class = "Star a06"></div>
+            <div class = "Star a07"></div>
+            <div class = "Star a08"></div>
+            <div class = "Star a09"></div>
+            <div class = "Star a10"></div>
+            <div class = "Star a11"></div>
+            <div class = "Star a12"></div>
+            <div class = "Star a13"></div>
+            <div class = "Star a14"></div>
+            <div class = "Star a15"></div>
+            <div class = "Star a16"></div>
+            <div class = "Star a17"></div>
+            <div class = "Star a18"></div>
+            <div class = "Star a19"></div>
+            <div class = "Star a20"></div>
+            <div class = "Star a21"></div>
+            <div class = "Star a22"></div>
+            <div class = "Star a23"></div>
+            <div class = "Star a24"></div>
+            <div class = "Star a25"></div>
+            <div class = "Star a26"></div>
+            <div class = "Star a27"></div>
+            <div class = "Star a28"></div>
+            <div class = "Star a29"></div>
+            <div class = "Star a30"></div>
+            <div class = "Star a31"></div>
+            <div class = "Star a32"></div>
+            <div class = "Star a33"></div>
+            <div class = "Star a34"></div>
+            <div class = "Star a35"></div>
+        </div>
+        <!-- #endregion Stars -->
+        
+        <div class = "topBar Learn">
+            <a onclick = "toHomePage()" class = "Logo"><img src = "../Images/Logo.png" alt = "Logo">DEV</a>
+            <a onclick = "toProjectsPage()">PROJECTS</a>
+            <div class = "hasDropdown">
+                <a onclick = "toLearnPage()" class = "Active">LEARN</a>
+                <div class = "dropDownMenu">
+                    <a onclick = "toLearnCSharpPage()">C#</a>
+                    <a onclick = "toLearnHTMLPage()" class = "Active">HTML</a>
+                    <a onclick = "toLearnCSSPage()">CSS</a>
+                </div>
+            </div>
+            <a onclick = "toAboutPage()">ABOUT</a>
+            <a onclick = "toHomePage()">HOME</a>
+
+            <a onclick = "openSideMenu()" class = "threeLineButton">
+                <div></div>
+                <div></div>
+                <div></div>
+            </a>
+        </div>
+
+        <div class = "siteMenu" id = "sideMenu">
+            <a onclick = "closeSideMenu()" class = "closeButton">
+                <div></div>
+                <div></div>
+            </a>
+
+            <a onclick = "toHomePage()"><div></div> HOME <div></div></a>
+            <a onclick = "toAboutPage()"><div></div> ABOUT <div></div></a>
+            <a href = "../otherPages/Learn.html" class = "Active"><div></div> LEARN <div></div></a>
+            <a onclick = "toProjectsPage()"><div></div> PROJECTS <div></div></a>
+        </div>
+
+        <img src = "../Images/learnPage/HTML/titleImage.png" alt = "Cool loking C# with light" class = "ballImage">
+        <div class = "ballRingHolder"><div class = "ballRing"></div></div>
+
+        <h1 class = "Title"></h1>
+        <h3 class = "subTitle">PROGRAMMING</h3>
+
+        <p class = "pageNumber">06</p>
+
+        <div class = "pageContent" id = "pageContent">
+            <div class = "sectionHolderBG Left Learn HTML">
+                <div class = "sectionHolder">
+                    <h1 class = "sectionTitle">ATTEMPT IT <div></div></h1>
+                    <p class = "sectionText">
+                        HTML is used to make websites. You could use
+                        <a href = "https://code.visualstudio.com/download" target = "_blank">
+                            Visual Studio Code
+                        </a>
+                        to write the code. Check the 5 tips and tricks.
+                    </p>
+
+                    <a onclick = "" class = "sectionButton"><i class = "fas fa-angle-double-right"></i></a>
+                </div>
+                <img src = "../Images/learnPage/HTML/mainIntroImage.png" alt = "Learn image" class = "sectionImage">
+            </div>
+
+            <div class = "scrollSectionHolder">
+                <div onclick = "changeLearnBoxStart()" class = "scrollSectionBox Active" id = "startButtin"><h1 class = "scrollSectionBoxTitle">Start</h1></div>
+                <div onclick = "changeLearnBoxLinkTag()" class = "scrollSectionBox" id = "linkTagButtin"><h1 class = "scrollSectionBoxTitle">&#x3C;link&#x3E;</h1></div>
+                <div onclick = "changeLearnBoxMetaTag()" class = "scrollSectionBox" id = "metaTagButtin"><h1 class = "scrollSectionBoxTitle">&#x3C;meta&#x3E;</h1></div>
+                <div class = "scrollSectionBox"><h1 class = "scrollSectionBoxTitle">&#x3C;script&#x3E;</h1></div>
+                <div class = "scrollSectionBox Last"><h1 class = "scrollSectionBoxTitle">Link Thumbnails</h1></div>
+            </div>
+
+            <div class = "learnBoxHolder Start" id = "learnBoxHolder">
+                <h1 class = "learnBoxHolderTitle">Start</h1>
+                <p class = "learnBoxHolderText">
+                    To start a HTML project you need a folder called <code>root folder</code>.
+                    This is the folder where all of your website files will be stored. The
+                    main page file for your website is always called <code>intex.html</code>.
+                    You can download ready prepared root folder for you to start clean.
+                </p>
+
+                <a href = "../Downloadable/rootFolder.rar" class = "learnBoxHolderDownloadButton" download><i class = "fas fa-download"></i> Download</a>
+            </div>
+
+            <div class = "bottomBar HTML" id = "bottomBar">
+                <div class = "directionButton H"><a onclick = "toHomePage()">HOME</a></div>
+                <div class = "directionButton A"><a onclick = "toAboutPage()">ABOUT</a></div>
+                <div class = "directionButton L"><a href = "../otherPages/Learn.html" class = "Active">LEARN</a></div>
+                <div class = "directionButton P"><a onclick = "toProjectsPage()">PROJECTS</a></div>
+    
+                <div class = "bottomLinksHolder">
+                    <a href = "https://www.facebook.com/profile.php?id=100023130139405" target = "_blank"><i class = "fab fa-facebook-f"></i></a>
+                    <a href = "https://www.instagram.com/kriss.vv/" target = "_blank"><i class = "fab fa-instagram"></i></a>
+                    <a href = "mailto: mr.youdevelopment@gmail.com"><i class="far fa-envelope"></i></a>
+                </div>
+    
+                <p class = "Credits">
+                    <powerd>Site powered by <company>Mr. You Development</company>.</powerd>
+                    <managed> Managed by <my>Kristiyan Valchecv</my></managed>
+                </p>
+            </div>
+        </div>
+
+        <div class = "hoddenPageNotification" id = "hoddenPageNotification">
+            <a onclick = "toHiddenPage()">
+                <h6>CONGRATS</h6>
+                <p>Go to hidden page</p>
+            </a>
+        </div>
+    </body>
+</html>
+
+<!-- #region Learn boxes -->
+<div id = "learnBoxHolderStart" style = "display: none;">
+    <div class = "learnBoxHolder" id = "learnBoxHolder">
+        <h1 class = "learnBoxHolderTitle">Start</h1>
+        <p class = "learnBoxHolderText">
+            To start a HTML project you need a folder called <code>root folder</code>.
+            This is the folder where all of your website files will be stored. The
+            main page file for your website is always called <code>intex.html</code>.
+            You can download ready prepared root folder for you to start clean.
+        </p>
+
+        <a href = "../Downloadable/rootFolder.rar" class = "learnBoxHolderDownloadButton"><i class = "fas fa-download"></i> Download</a>
+    </div>
+</div>
+
+<div id = "learnBoxHolderLinkTag" style = "display: none;">
+    <div class = "learnBoxHolder" id = "learnBoxHolder">
+        <h1 class = "learnBoxHolderTitle">&#x3C;link&#x3E;</h1>
+        <p class = "learnBoxHolderText">
+            ...
+        </p>
+    
+        <a href = "#" class = "learnBoxHolderDownloadButton">...</a>
+    </div>
+</div>
+
+<div id = "learnBoxHolderMetaTag" style = "display: none;">
+    <div class = "learnBoxHolder" id = "learnBoxHolder">
+        <h1 class = "learnBoxHolderTitle">&#x3C;meta&#x3E;</h1>
+        <p class = "learnBoxHolderText">
+            ...
+        </p>
+    
+        <a href = "#" class = "learnBoxHolderDownloadButton">...</a>
+    </div>
+</div>
+
+<div id = "bottomBarHolder" style = "display: none;">
+    <div class = "bottomBar HTML" id = "bottomBar">
+        <div class = "directionButton H"><a onclick = "toHomePage()">HOME</a></div>
+        <div class = "directionButton A"><a onclick = "toAboutPage()">ABOUT</a></div>
+        <div class = "directionButton L"><a href = "../otherPages/Learn.html" class = "Active">LEARN</a></div>
+        <div class = "directionButton P"><a onclick = "toProjectsPage()">PROJECTS</a></div>
+
+        <div class = "bottomLinksHolder">
+            <a href = "https://www.facebook.com/profile.php?id=100023130139405" target = "_blank"><i class = "fab fa-facebook-f"></i></a>
+            <a href = "https://www.instagram.com/kriss.vv/" target = "_blank"><i class = "fab fa-instagram"></i></a>
+            <a href = "mailto: mr.youdevelopment@gmail.com"><i class="far fa-envelope"></i></a>
+        </div>
+
+        <p class = "Credits">
+            <powerd>Site powered by <company>Mr. You Development</company>.</powerd>
+            <managed> Managed by <my>Kristiyan Valchecv</my></managed>
+        </p>
+    </div>
+</div>
+<!-- #endregion Learn boxes -->
