@@ -1298,6 +1298,7 @@ body::before
     height: 100%;
     background-color: #343849;
     box-shadow: 10px 10px 20px #00000080;
+    border-radius: 30px;
 }
 
 .boxHolderX3 .boxeBG:nth-child(1)
@@ -1370,6 +1371,7 @@ body::before
     line-height: 50px;
     color: #e5e5e5;
     background-color: #090d19;
+    border-radius: 999px;
 }
 
 .boxHolderX3 .boxeBG .boxButton:hover
