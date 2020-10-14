@@ -135,8 +135,8 @@
 
         <p class = "pageNumber">05</p>
 
-        <div class = "pageContent">
-            <div class = "sectionHolderBG Left Learn">
+        <div class = "pageContent" id = "pageContent">
+            <div class = "sectionHolderBG Left Learn pRelative">
                 <div class = "sectionHolder">
                     <h1 class = "sectionTitle">TRY IT <div></div></h1>
                     <p class = "sectionText">
@@ -149,10 +149,45 @@
 
                     <a onclick = "" class = "sectionButton"><i class = "fas fa-angle-double-right"></i></a>
                 </div>
-                <img src = "../Images/learnPage/CSharp/.jpg" alt = "Learn image" class = "sectionImage">
+                <img src = "../Images/learnPage/CSharp/mainIntroImage.png" alt = "Learn image" class = "sectionImage">
             </div>
 
-            <div class = "contentSoon" style = "height: 500px;">Content Soon...</div>
+            <div class = "scrollSectionHolder">
+                <div onclick = "changeLearnBox('startButton', 'learnBoxHolderStart')" class = "scrollSectionBox Active" id = "startButton"><h1 class = "scrollSectionBoxTitle">Start</h1></div>
+                <div onclick = "changeLearnBox('otherButton', 'learnBoxHolderOther')" class = "scrollSectionBox Last" id = "otherButton"><h1 class = "scrollSectionBoxTitle">Other</h1></div>
+            </div>
+
+            <div class = "learnBoxHolder" id = "learnBoxHolder">
+                <h1 class = "learnBoxHolderTitle">Start</h1>
+                <p class = "learnBoxHolderText">
+                    To start a C# project you will need to install a program where you will be
+                    able to code from. The best program for C# editing is
+                    <a href = "https://visualstudio.microsoft.com/downloads/" target = "_blank">
+                        Microsoft Visual Studio
+                    </a> which is a free software. Everything that you will be producing
+                    as a code should be written inside the <code>namespace</code> parentheses
+                </p>
+
+                <a onclick = "changeLearnBox('otherButton', 'learnBoxHolderOther')" class = "learnBoxHolderDownloadButton">Next</a>
+            </div>
+
+            <div class = "bottomBar pRelative" id = "bottomBar">
+                <div class = "directionButton H"><a onclick = "toHomePage()">HOME</a></div>
+                <div class = "directionButton A"><a onclick = "toAboutPage()">ABOUT</a></div>
+                <div class = "directionButton L"><a href = "../otherPages/Learn.html" class = "Active">LEARN</a></div>
+                <div class = "directionButton P"><a onclick = "toProjectsPage()">PROJECTS</a></div>
+    
+                <div class = "bottomLinksHolder">
+                    <a href = "https://www.facebook.com/profile.php?id=100023130139405" target = "_blank"><i class = "fab fa-facebook-f"></i></a>
+                    <a href = "https://www.instagram.com/kriss.vv/" target = "_blank"><i class = "fab fa-instagram"></i></a>
+                    <a href = "mailto: mr.youdevelopment@gmail.com"><i class="far fa-envelope"></i></a>
+                </div>
+    
+                <p class = "Credits">
+                    <powerd>Site powered by <company>Mr. You Development</company>.</powerd>
+                    <managed> Managed by <my>Kristiyan Valchecv</my></managed>
+                </p>
+            </div>
         </div>
 
         <div class = "hoddenPageNotification" id = "hoddenPageNotification">
@@ -161,23 +196,52 @@
                 <p>Go to hidden page</p>
             </a>
         </div>
-
-        <div class = "bottomBar learnPage">
-            <div class = "directionButton H"><a onclick = "toHomePage()">HOME</a></div>
-            <div class = "directionButton A"><a onclick = "toAboutPage()">ABOUT</a></div>
-            <div class = "directionButton L"><a href = "../otherPages/Learn.html" class = "Active">LEARN</a></div>
-            <div class = "directionButton P"><a onclick = "toProjectsPage()">PROJECTS</a></div>
-
-            <div class = "bottomLinksHolder">
-                <a href = "https://www.facebook.com/profile.php?id=100023130139405" target = "_blank"><i class = "fab fa-facebook-f"></i></a>
-                <a href = "https://www.instagram.com/kriss.vv/" target = "_blank"><i class = "fab fa-instagram"></i></a>
-                <a href = "mailto: mr.youdevelopment@gmail.com"><i class="far fa-envelope"></i></a>
-            </div>
-
-            <p class = "Credits">
-                <powerd>Site powered by <company>Mr. You Development</company>.</powerd>
-                <managed> Managed by <my>Kristiyan Valchecv</my></managed>
-            </p>
-        </div>
     </body>
 </html>
+
+<!-- #region Learn boxes -->
+<div id = "learnBoxHolderStart" style = "display: none;">
+    <div class = "learnBoxHolder" id = "learnBoxHolder">
+        <h1 class = "learnBoxHolderTitle">Start</h1>
+        <p class = "learnBoxHolderText">
+            To start a HTML project you will need a folder called <code>root folder</code>.
+            This is the folder where all of your website files will be stored. The
+            main page file for your website is always called <code>intex.html</code>.
+            You can download already prepared root folder for you to start clean.
+        </p>
+
+        <a onclick = "changeLearnBox('otherButton', 'learnBoxHolderOther')" class = "learnBoxHolderDownloadButton">Next</a>
+    </div>
+</div>
+
+<div id = "learnBoxHolderOther" style = "display: none;">
+    <div class = "learnBoxHolder" id = "learnBoxHolder">
+        <h1 class = "learnBoxHolderTitle">Coming soon</h1>
+        <p class = "learnBoxHolderText">
+            New tips and tricks are coming soon...
+        </p>
+
+        <a onclick = "changeLearnBox('startButton', 'learnBoxHolderStart')" class = "learnBoxHolderDownloadButton">Previous</a>
+    </div>
+</div>
+
+<div id = "bottomBarHolder" style = "display: none;">
+    <div class = "bottomBar pRelative" id = "bottomBar">
+        <div class = "directionButton H"><a onclick = "toHomePage()">HOME</a></div>
+        <div class = "directionButton A"><a onclick = "toAboutPage()">ABOUT</a></div>
+        <div class = "directionButton L"><a href = "../otherPages/Learn.html" class = "Active">LEARN</a></div>
+        <div class = "directionButton P"><a onclick = "toProjectsPage()">PROJECTS</a></div>
+
+        <div class = "bottomLinksHolder">
+            <a href = "https://www.facebook.com/profile.php?id=100023130139405" target = "_blank"><i class = "fab fa-facebook-f"></i></a>
+            <a href = "https://www.instagram.com/kriss.vv/" target = "_blank"><i class = "fab fa-instagram"></i></a>
+            <a href = "mailto: mr.youdevelopment@gmail.com"><i class="far fa-envelope"></i></a>
+        </div>
+
+        <p class = "Credits">
+            <powerd>Site powered by <company>Mr. You Development</company>.</powerd>
+            <managed> Managed by <my>Kristiyan Valchecv</my></managed>
+        </p>
+    </div>
+</div>
+<!-- #endregion Learn boxes -->

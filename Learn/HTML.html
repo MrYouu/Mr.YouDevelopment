@@ -19,7 +19,7 @@
         <title>Learn HTML</title>
     </head>
 
-    <body id = "body" onload = "checkForHiddenPage(), randomiseColors()">
+    <body id = "body" onload = "checkForHiddenPage()">
         <!-- #region Loader -->
         <img src = "../Images/linkImages/learnPageHTML.png" alt = "Link image" style = "display: none;">
 
@@ -136,7 +136,7 @@
         <p class = "pageNumber">06</p>
 
         <div class = "pageContent" id = "pageContent">
-            <div class = "sectionHolderBG Left Learn HTML">
+            <div class = "sectionHolderBG Left Learn pRelative">
                 <div class = "sectionHolder">
                     <h1 class = "sectionTitle">ATTEMPT IT <div></div></h1>
                     <p class = "sectionText">
@@ -153,26 +153,26 @@
             </div>
 
             <div class = "scrollSectionHolder">
-                <div onclick = "changeLearnBoxStart()" class = "scrollSectionBox Active" id = "startButtin"><h1 class = "scrollSectionBoxTitle">Start</h1></div>
-                <div onclick = "changeLearnBoxLinkTag()" class = "scrollSectionBox" id = "linkTagButtin"><h1 class = "scrollSectionBoxTitle">&#x3C;link&#x3E;</h1></div>
-                <div onclick = "changeLearnBoxMetaTag()" class = "scrollSectionBox" id = "metaTagButtin"><h1 class = "scrollSectionBoxTitle">&#x3C;meta&#x3E;</h1></div>
-                <div class = "scrollSectionBox"><h1 class = "scrollSectionBoxTitle">&#x3C;script&#x3E;</h1></div>
-                <div class = "scrollSectionBox Last"><h1 class = "scrollSectionBoxTitle">Link Thumbnails</h1></div>
+                <div onclick = "changeLearnBox('startButton', 'learnBoxHolderStart')" class = "scrollSectionBox Active" id = "startButton"><h1 class = "scrollSectionBoxTitle">Start</h1></div>
+                <div onclick = "changeLearnBox('linkTagButton', 'learnBoxHolderLinkTag')" class = "scrollSectionBox" id = "linkTagButton"><h1 class = "scrollSectionBoxTitle">&#x3C;link&#x3E;</h1></div>
+                <div onclick = "changeLearnBox('metaTagButton', 'learnBoxHolderMetaTag')" class = "scrollSectionBox" id = "metaTagButton"><h1 class = "scrollSectionBoxTitle">&#x3C;meta&#x3E;</h1></div>
+                <div onclick = "changeLearnBox('scriptTagButton', 'learnBoxHolderScriptTag')" class = "scrollSectionBox" id = "scriptTagButton"><h1 class = "scrollSectionBoxTitle">&#x3C;script&#x3E;</h1></div>
+                <div onclick = "changeLearnBox('otherButton', 'learnBoxHolderOther')" class = "scrollSectionBox Last" id = "otherButton"><h1 class = "scrollSectionBoxTitle">Other</h1></div>
             </div>
 
-            <div class = "learnBoxHolder Start" id = "learnBoxHolder">
+            <div class = "learnBoxHolder" id = "learnBoxHolder">
                 <h1 class = "learnBoxHolderTitle">Start</h1>
                 <p class = "learnBoxHolderText">
-                    To start a HTML project you need a folder called <code>root folder</code>.
+                    To start an HTML project you will need a folder called <code>root folder</code>.
                     This is the folder where all of your website files will be stored. The
                     main page file for your website is always called <code>intex.html</code>.
-                    You can download ready prepared root folder for you to start clean.
+                    You can download already prepared root folder for you to start clean.
                 </p>
 
                 <a href = "../Downloadable/rootFolder.rar" class = "learnBoxHolderDownloadButton" download><i class = "fas fa-download"></i> Download</a>
             </div>
 
-            <div class = "bottomBar HTML" id = "bottomBar">
+            <div class = "bottomBar pRelative" id = "bottomBar">
                 <div class = "directionButton H"><a onclick = "toHomePage()">HOME</a></div>
                 <div class = "directionButton A"><a onclick = "toAboutPage()">ABOUT</a></div>
                 <div class = "directionButton L"><a href = "../otherPages/Learn.html" class = "Active">LEARN</a></div>
@@ -205,10 +205,10 @@
     <div class = "learnBoxHolder" id = "learnBoxHolder">
         <h1 class = "learnBoxHolderTitle">Start</h1>
         <p class = "learnBoxHolderText">
-            To start a HTML project you need a folder called <code>root folder</code>.
+            To start an HTML project you will need a folder called <code>root folder</code>.
             This is the folder where all of your website files will be stored. The
             main page file for your website is always called <code>intex.html</code>.
-            You can download ready prepared root folder for you to start clean.
+            You can download already prepared root folder for you to start clean.
         </p>
 
         <a href = "../Downloadable/rootFolder.rar" class = "learnBoxHolderDownloadButton"><i class = "fas fa-download"></i> Download</a>
@@ -218,11 +218,79 @@
 <div id = "learnBoxHolderLinkTag" style = "display: none;">
     <div class = "learnBoxHolder" id = "learnBoxHolder">
         <h1 class = "learnBoxHolderTitle">&#x3C;link&#x3E;</h1>
-        <p class = "learnBoxHolderText">
-            ...
-        </p>
-    
-        <a href = "#" class = "learnBoxHolderDownloadButton">...</a>
+        <ol class = "learnBoxHolderList">
+            <li class = "learnBoxHolderListLine">
+                Fonts
+                <p class = "learnBoxHolderListLineText">
+                    If you want to change your website's font you will need to put
+                    <code>&#x3C;link&#x3E;</code> in the <code>head</code> tag of your site.
+                    Put <code>href=""</code> and <code>rel="stylesheet"</code> in the
+                    <code>&#x3C;link&#x3E;</code> tag. Add a link to the font library in
+                    the href's <code>""</code>.
+                </p>
+
+                <div class = "learnBoxHolderListLineExample">
+                    <p class = "learnBoxHolderListLineExampleTitle">Example: </p>
+                    <p class = "learnBoxHolderListLineExampleText" id = "link01">
+                        &#x3C;link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"&#x3E;
+                    </p>
+                    <a onclick = "copyText('link01')" class = "learnBoxHolderListLineButton"><i class = "fas fa-copy"></i></a>
+                </div>
+
+                <p class = "learnBoxHolderListLineText">
+                    The best place for you to fined high quality free fonts is
+                    <a href = "https://fonts.google.com" target = "_blank">
+                        Google Fonts
+                    </a> website
+                </p>
+            </li>
+
+            <li class = "learnBoxHolderListLine">
+                SCC Linking
+                <p class = "learnBoxHolderListLineText">
+                    If you want to link a CSS file to your html file you will need to put
+                    <code>&#x3C;link&#x3E;</code> in the <code>head</code> tag of your site.
+                    Put <code>type="text/css"</code>, <code>rel="stylesheet"</code> and
+                    <code>href=""</code> in the <code>&#x3C;link&#x3E;</code> tag.
+                    Add a relative path to the CSS file in the href's <code>""</code>.
+                </p>
+
+                <div class = "learnBoxHolderListLineExample">
+                    <p class = "learnBoxHolderListLineExampleTitle">Example: </p>
+                    <p class = "learnBoxHolderListLineExampleText" id = "link02">
+                        &#x3C;link type="text/css" rel="stylesheet" href="Files/Style.css"&#x3E;
+                    </p>
+                    <a onclick = "copyText('link02')" class = "learnBoxHolderListLineButton"><i class = "fas fa-copy"></i></a>
+                </div>
+            </li>
+
+            <li class = "learnBoxHolderListLine">
+                Tab icon
+                <p class = "learnBoxHolderListLineText">
+                    If you want to put a custom tab icon on your website you will need to put
+                    <code>&#x3C;link&#x3E;</code> in the <code>head</code> tag of your site.
+                    Put <code>type="image"</code>, <code>rel="icon"</code>,
+                    <code>sizes = "16x16"</code> and <code>href=""</code> in the
+                    <code>&#x3C;link&#x3E;</code> tag. Add a relative path to the image
+                    you want in the href's <code>""</code>.
+                </p>
+
+                <div class = "learnBoxHolderListLineExample">
+                    <p class = "learnBoxHolderListLineExampleTitle">Example: </p>
+                    <p class = "learnBoxHolderListLineExampleText" id = "link03">
+                        &#x3C;link type="image" rel="icon" sizes="16x16" href="Images/tabLogo.png"&#x3E;
+                    </p>
+                    <a onclick = "copyText('link03')" class = "learnBoxHolderListLineButton"><i class = "fas fa-copy"></i></a>
+                </div>
+
+                <p class = "learnBoxHolderListLineText">
+                    Keep in mind that your tab logo does not need to to be 16x16 pixels.
+                    It just needs to be 1:1 ratio or it will not show on the tab.
+                </p>
+            </li>
+        </ol>
+
+        <a onclick = "changeLearnBox('metaTagButton', 'learnBoxHolderMetaTag')" class = "learnBoxHolderDownloadButton">Next</a>
     </div>
 </div>
 
@@ -230,15 +298,134 @@
     <div class = "learnBoxHolder" id = "learnBoxHolder">
         <h1 class = "learnBoxHolderTitle">&#x3C;meta&#x3E;</h1>
         <p class = "learnBoxHolderText">
-            ...
+            <code>Meta</code> tags are used to give information for the website without
+            actually displaying it on the viewport.
         </p>
+
+        <ol class = "learnBoxHolderList">
+            <li class = "learnBoxHolderListLine">
+                Adding a description for your website
+                <p class = "learnBoxHolderListLineText">
+                    The text that you see under the website's title when you share a link
+                    is the text that you should include in this tag. You will need to put
+                    <code>&#x3C;meta&#x3E;</code> in the <code>head</code> tag of your site.
+                    Put <code>name="description"</code> and <code>content=""</code> in the
+                    <code>&#x3C;meta&#x3E;</code> tag. Add the text you want in the
+                    content's <code>""</code>.
+                </p>
+
+                <div class = "learnBoxHolderListLineExample">
+                    <p class = "learnBoxHolderListLineExampleTitle">Example: </p>
+                    <p class = "learnBoxHolderListLineExampleText" id = "meta01">
+                        &#x3C;meta name="description" content="This is cool website. Come check it out!"&#x3E;
+                    </p>
+                    <a onclick = "copyText('meta01')" class = "learnBoxHolderListLineButton"><i class = "fas fa-copy"></i></a>
+                </div>
+
+                <p class = "learnBoxHolderListLineText">
+                    Keep in mind that generally you do not have a limit in the words but Google
+                    generally snips the text to 155/160 characters. I recommend you use maximum of
+                    100 characters as this is the ultimate.
+                </p>
+            </li>
+
+            <li class = "learnBoxHolderListLine">
+                Adding a keywords for your website
+                <p class = "learnBoxHolderListLineText">
+                    All search engines use keywords to find the right links to show
+                    the user. More keywords means better search rates. You will need to put
+                    <code>&#x3C;meta&#x3E;</code> in the <code>head</code> tag of your site.
+                    Put <code>name="keywords"</code> and <code>content=""</code> in the
+                    <code>&#x3C;meta&#x3E;</code> tag. Add all the keywords you want in the
+                    content's <code>""</code> using <code>, </code>
+                    to separate them from each other.
+                </p>
+
+                <div class = "learnBoxHolderListLineExample">
+                    <p class = "learnBoxHolderListLineExampleTitle">Example: </p>
+                    <p class = "learnBoxHolderListLineExampleText" id = "meta02">
+                        &#x3C;meta name="keywords" content="Example, Cold, Milk"&#x3E;
+                    </p>
+                    <a onclick = "copyText('meta02')" class = "learnBoxHolderListLineButton"><i class = "fas fa-copy"></i></a>
+                </div>
+
+                <p class = "learnBoxHolderListLineText">
+                    There is no official limit on the number of keywords you can have.
+                    Each search engine sets their own rules so feel free to put as many keywords
+                    as you think are necessary but do not exaggerate.
+                </p>
+            </li>
+
+            <li class = "learnBoxHolderListLine">
+                Website's author
+                <p class = "learnBoxHolderListLineText">
+                    If ypu want to asigne your website you will need to put
+                    <code>&#x3C;meta&#x3E;</code> in the <code>head</code> tag of your site.
+                    Put <code>name="author"</code> and <code>content=""</code> in the
+                    <code>&#x3C;meta&#x3E;</code> tag. Add Your name or unername in the
+                    content's <code>""</code>.
+                </p>
+
+                <div class = "learnBoxHolderListLineExample">
+                    <p class = "learnBoxHolderListLineExampleTitle">Example: </p>
+                    <p class = "learnBoxHolderListLineExampleText" id = "meta03">
+                        &#x3C;meta name="author" content="Jim Oxford"&#x3E;
+                    </p>
+                    <a onclick = "copyText('meta03')" class = "learnBoxHolderListLineButton"><i class = "fas fa-copy"></i></a>
+                </div>
+            </li>
+
+            <li class = "learnBoxHolderListLine">
+                Viewport settings
+                <p class = "learnBoxHolderListLineText">
+                    This is one of the most necessary tags your website needs.
+                    Put the line shown in the example box below in your
+                    <code>head</code> tag.
+                </p>
+
+                <div class = "learnBoxHolderListLineExample">
+                    <p class = "learnBoxHolderListLineExampleTitle">Example: </p>
+                    <p class = "learnBoxHolderListLineExampleText" id = "meta04">
+                        &#x3C;meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1"&#x3E;
+                    </p>
+                    <a onclick = "copyText('meta034')" class = "learnBoxHolderListLineButton"><i class = "fas fa-copy"></i></a>
+                </div>
+
+                <p class = "learnBoxHolderListLineText">
+                    This tag scales the website in the same ratio the device is. This way
+                    everything on the page stays in the same order and scale as the device's screen.
+                </p>
+            </li>
+        </ol>
     
-        <a href = "#" class = "learnBoxHolderDownloadButton">...</a>
+        <a onclick = "changeLearnBox('scriptTagButton', 'learnBoxHolderScriptTag')" class = "learnBoxHolderDownloadButton">Next</a>
+    </div>
+</div>
+
+<div id = "learnBoxHolderScriptTag" style = "display: none;">
+    <div class = "learnBoxHolder" id = "learnBoxHolder">
+        <h1 class = "learnBoxHolderTitle">&#x3C;script&#x3E;</h1>
+        <p class = "learnBoxHolderText">
+            Coming soon
+        </p>
+
+        <a onclick = "changeLearnBox('otherButton', 'learnBoxHolderOther')" class = "learnBoxHolderDownloadButton">Next</a>
+    </div>
+</div>
+
+<div id = "learnBoxHolderOther" style = "display: none;">
+    <div class = "learnBoxHolder" id = "learnBoxHolder">
+        <h1 class = "learnBoxHolderTitle">Coming soon</h1>
+        <p class = "learnBoxHolderText">
+            New tips and tricks are coming soon...
+        </p>
+
+        <a onclick = "changeLearnBox('scriptTagButton', 'learnBoxHolderScriptTag')" class = "learnBoxHolderDownloadButton">Previous</a>
     </div>
 </div>
 
 <div id = "bottomBarHolder" style = "display: none;">
-    <div class = "bottomBar HTML" id = "bottomBar">
+    <div class = "bottomBar pRelative" id = "bottomBar">
         <div class = "directionButton H"><a onclick = "toHomePage()">HOME</a></div>
         <div class = "directionButton A"><a onclick = "toAboutPage()">ABOUT</a></div>
         <div class = "directionButton L"><a href = "../otherPages/Learn.html" class = "Active">LEARN</a></div>
