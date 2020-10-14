@@ -833,7 +833,7 @@ body::before
     background-color: #028bc2;
 }
 
-.sectionHolderBG.Learn.HTML
+.sectionHolderBG.Learn.pRelative
 {
     margin-bottom: 200px;
 }
@@ -1009,7 +1009,7 @@ body::before
     height: 70px;
     top: 0;
     left: 30;
-    background-color: #5e2c99;
+    background-color: #028bc2;
     border-radius: 20px;
     margin-right: 30px;
     padding-left: 40px;
@@ -1097,6 +1097,12 @@ body::before
     padding-bottom: 60px;
 }
 
+.learnBoxHolder .learnBoxHolderText a
+{
+    color: #028bc2a0;
+    filter: brightness(5);
+}
+
 .learnBoxHolder .learnBoxHolderDownloadButton
 {
     position: relative;
@@ -1119,6 +1125,112 @@ body::before
 .learnBoxHolder .learnBoxHolderDownloadButton:hover
 {
     letter-spacing: 1px;
+}
+
+.learnBoxHolder .learnBoxHolderList
+{
+    position: relative;
+    width: calc(100% - 60px);
+    top: 0;
+    left: 30;
+    padding-top: 0px;
+    padding-bottom: 20px;
+    padding-left: 0px;
+}
+
+.learnBoxHolder .learnBoxHolderListLine
+{
+    position: relative;
+    width: calc(100% - 60px);
+    top: 0;
+    left: 30;
+    font-size: 24px;
+    font-weight: normal;
+    line-height: 24px;
+    color: #e5e5e5;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.learnBoxHolder .learnBoxHolderListLine .learnBoxHolderListLineText
+{
+    position: relative;
+    width: calc(100% + 15px);
+    top: 0;
+    left: 0;
+    font-size: 22px;
+    font-weight: normal;
+    line-height: 32px;
+    color: #e5e5e580;
+    padding-bottom: 20px;
+}
+
+.learnBoxHolder .learnBoxHolderListLine .learnBoxHolderListLineExample
+{
+    position: relative;
+    width: calc(100% + 15px);
+    height: auto;
+    top: 0;
+    left: 0;
+    background-color: #028bc260;
+    word-break: break-all;
+    border-radius: 30px;
+    padding-top: 20px;
+    padding-bottom: 60px;
+    margin-bottom: 20px;
+}
+
+.learnBoxHolder .learnBoxHolderListLine .learnBoxHolderListLineExample .learnBoxHolderListLineExampleTitle
+{
+    position: relative;
+    width: calc(100% - 60px);
+    top: 0;
+    left: 30;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 24px;
+    color: #e5e5e5;
+    padding-top: 0px;
+}
+
+.learnBoxHolder .learnBoxHolderListLine .learnBoxHolderListLineExample .learnBoxHolderListLineExampleText
+{
+    position: relative;
+    width: calc(100% - 60px);
+    top: 0;
+    left: 30;
+    font-size: 22px;
+    font-weight: normal;
+    line-height: 32px;
+    color: #e5e5e5e0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.learnBoxHolder .learnBoxHolderListLine .learnBoxHolderListLineExample .learnBoxHolderListLineButton
+{
+    float: right;
+    position: relative;
+    top: 0;
+    right: 15;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 24px;
+    color: #e5e5e5;
+    background-color: #028bc260;
+    border-radius: 30px;
+    padding: 12px 30px;
+}
+
+.learnBoxHolder .learnBoxHolderListLine .learnBoxHolderListLineExample .learnBoxHolderListLineButton:hover
+{
+    filter: brightness(1.3);
+}
+
+.learnBoxHolder .learnBoxHolderListLine .learnBoxHolderListLineText a
+{
+    color: #028bc2a0;
+    filter: brightness(5);
 }
 /*#endregion learn box with info*/
 
@@ -1845,7 +1957,7 @@ body::before
     top: 2800;
 }
 
-.bottomBar.HTML
+.bottomBar.pRelative
 {
     position: relative;
     top: 0;
@@ -2615,6 +2727,44 @@ code
         font-size: 18px;
         line-height: 18px;
     }
+
+    .learnBoxHolder .learnBoxHolderListLine
+    {
+        font-size: 22px;
+        line-height: 22px;
+    }
+
+    .learnBoxHolder .learnBoxHolderListLine .learnBoxHolderListLineText
+    {
+        font-size: 16px;
+        line-height: 26px;
+    }
+
+    .learnBoxHolder .learnBoxHolderListLine .learnBoxHolderListLineExample
+    {
+        padding-bottom: 47px;
+    }
+
+    .learnBoxHolder .learnBoxHolderListLine .learnBoxHolderListLineExample .learnBoxHolderListLineExampleTitle
+    {
+        font-size: 22px;
+        line-height: 22px;
+    }
+
+    .learnBoxHolder .learnBoxHolderListLine .learnBoxHolderListLineExample .learnBoxHolderListLineExampleText
+    {
+        font-size: 16px;
+        line-height: 26px;
+    }
+
+    .learnBoxHolder .learnBoxHolderListLine .learnBoxHolderListLineExample .learnBoxHolderListLineButton
+    {
+        right: 10;
+        font-size: 18px;
+        line-height: 18px;
+        border-radius: 999px;
+        padding: 10px 20px;
+    }
 }
 /*#endregion Media 700-600 */
 
@@ -2915,6 +3065,16 @@ code
     {
         width: calc(100% - 30px);
         left: 15;
+    }
+
+    .learnBoxHolder .learnBoxHolderListLine .learnBoxHolderListLineText
+    {
+        width: calc(100% + 45px);
+    }
+
+    .learnBoxHolder .learnBoxHolderListLine .learnBoxHolderListLineExample
+    {
+        width: calc(100% + 45px);
     }
 
     .bottomBar
