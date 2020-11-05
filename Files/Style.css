@@ -31,7 +31,6 @@ body::before
     box-shadow: 0px 0px 30px #000000;
     z-index: 100;
 }
-
 /*#region Scrow bar */
 ::-webkit-scrollbar
 {
@@ -625,8 +624,9 @@ body::before
     height: 1500px;
     top: 0;
     left: 0;
+    mix-blend-mode: screen;
 
-    z-index: -20;
+    z-index: -1;
 
     animation: backGroundAnimation .5s ease-out forwards .3s;
     top: -500;
@@ -1494,15 +1494,6 @@ body::before
 /*#endregion Boxes */
 
 /*#region Stars */
-#mouseCoordinatesText
-{
-    position: absolute;
-    font-size: 30px;
-    top: 200;
-    left: 60;
-    color: green;
-}
-
 .starsHolder
 {
     position: absolute;
@@ -1519,313 +1510,121 @@ body::before
     opacity: 0;
 }
 
-.Star
+.stars, .twinkling, .clouds
 {
+    display: block;
     position: absolute;
-    background-color: #e5e5e5;
-    border-radius: 999px;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.stars
+{
+    background: #000 url(../Images/starSky.png) repeat top center;
+    z-index: 0;
+}
+
+.twinkling
+{
+    background: transparent url(http://www.script-tutorials.com/demos/360/images/twinkling.png) repeat top center;
+    z-index: 1;
+
+    -moz-animation: move-twink-back 200s linear infinite;
+    -ms-animation: move-twink-back 200s linear infinite;
+    -o-animation: move-twink-back 200s linear infinite;
+    -webkit-animation: move-twink-back 200s linear infinite;
+    animation: move-twink-back 200s linear infinite;
+}
+
+.clouds
+{
+    background: transparent url(../Images/mainPageCloudss.png) repeat-x top center;
+    z-index: 0;
     opacity: .5;
 
-    box-shadow: 0 0 20px #fff, 0 0 30px #e5e5e5d0, 0 0 40px #e5e5e5c0, 0 0 50px #e5e5e5b0, 0 0 60px #e5e5e5a0, 0 0 70px #e5e5e590, 0 0 80px #e5e5e580;
+    animation: move-clouds-back 200s linear infinite;
+    -webkit-animation: move-clouds-back 200s linear infinite;
+    -moz-animation: move-clouds-back 200s linear infinite;
+    -ms-animation: move-clouds-back 200s linear infinite;
+    -o-animation: move-clouds-back 200s linear infinite;
 }
 
-.Star.a01
+.clouds.Home
 {
-    width: 3px;
-    height: 3px;
-    top: 150;
-    left: 400;
+    background: transparent url(../Images/mainPageClouds.png) repeat-x top center;
 }
 
-.Star.a02
+.clouds.About
 {
-    width: 3px;
-    height: 3px;
-    top: 300;
-    left: 300;
+    background: transparent url(../Images/aboutPageClouds.png) repeat-x top center;
 }
 
-.Star.a03
+.clouds.Learn
 {
-    width: 2px;
-    height: 2px;
-    top: 280;
-    left: 250;
-    opacity: .3;
+    background: transparent url(../Images/learnPageClouds.png) repeat-x top center;
 }
 
-.Star.a04
+.hider
 {
-    width: 2px;
-    height: 2px;
-    top: 310;
-    left: 270;
-    opacity: .3;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(to bottom, transparent 90%, #070a14); /* 090d19 070a14 */
+
+    z-index: 2;
 }
 
-.Star.a05
+
+@keyframes move-twink-back
 {
-    width: 3.5px;
-    height: 3.5px;
-    top: 320;
-    left: 100;
+    from { background-position: 0 0; }
+    to { background-position: -10000px 5000px; }
 }
 
-.Star.a06
+@-webkit-keyframes move-twink-back
 {
-    width: 3px;
-    height: 3px;
-    top: 280;
-    left: 440;
+    from { background-position: 0 0; }
+    to { background-position: -10000px 5000px; }
 }
 
-.Star.a07
+@-moz-keyframes move-twink-back
 {
-    width: 2px;
-    height: 2px;
-    top: 320;
-    left: 430;
-    opacity: .3;
+    from { background-position: 0 0; }
+    to { background-position: -10000px 5000px; }
 }
 
-.Star.a08
+@-ms-keyframes move-twink-back
 {
-    width: 2px;
-    height: 2px;
-    top: 500;
-    left: 400;
-    opacity: .6;
+    from { background-position: 0 0; }
+    to { background-position: -10000px 5000px; }
 }
 
-.Star.a09
+@keyframes move-clouds-back 
 {
-    width: 2px;
-    height: 2px;
-    top: 410;
-    left: 250;
-    opacity: .3;
+    from { background-position: 0 0; }
+    to { background-position: 10000px 0; }
+}
+@-webkit-keyframes move-clouds-back {
+    from {background-position: 0 0;}
+    to {background-position: 10000px 0;}
 }
 
-.Star.a10
+@-moz-keyframes move-clouds-back
 {
-    width: 2px;
-    height: 2px;
-    top: 520;
-    left: 330;
-    opacity: .2;
+    from { background-position: 0 0; }
+    to { background-position: 10000px 0; }
 }
 
-.Star.a11
+@-ms-keyframes move-clouds-back
 {
-    width: 2px;
-    height: 2px;
-    top: 550;
-    left: 120;
-}
-
-.Star.a12
-{
-    width: 2px;
-    height: 2px;
-    top: 660;
-    left: 300;
-}
-
-.Star.a13
-{
-    width: 3px;
-    height: 3px;
-    top: 620;
-    left: 610;
-}
-
-.Star.a14
-{
-    width: 2px;
-    height: 2px;
-    top: 110;
-    left: 860;
-    opacity: .3;
-}
-
-.Star.a15
-{
-    width: 2px;
-    height: 2px;
-    top: 200;
-    left: 920;
-    opacity: .3;
-}
-
-.Star.a16
-{
-    width: 3px;
-    height: 3px;
-    top: 300;
-    left: 1200;
-    opacity: .6;
-}
-
-.Star.a17
-{
-    width: 3px;
-    height: 3px;
-    top: 410;
-    left: 1270;
-}
-
-.Star.a18
-{
-    width: 3px;
-    height: 3px;
-    top: 390;
-    left: 1330;
-    opacity: .3;
-}
-
-.Star.a19
-{
-    width: 1px;
-    height: 1px;
-    top: 490;
-    left: 420;
-}
-
-.Star.a20
-{
-    width: 1px;
-    height: 1px;
-    top: 650;
-    left: 290;
-    opacity: .6;
-}
-
-.Star.a21
-{
-    width: 2px;
-    height: 2px;
-    top: 660;
-    left: 670;
-}
-
-.Star.a22
-{
-    width: 2px;
-    height: 2px;
-    top: 690;
-    left: 780;
-}
-
-.Star.a23
-{
-    width: 2px;
-    height: 2px;
-    top: 660;
-    left: 750;
-    opacity: .3;
-}
-
-.Star.a24
-{
-    width: 2px;
-    height: 2px;
-    top: 850;
-    left: 530;
-    opacity: .7;
-}
-
-.Star.a25
-{
-    width: 2px;
-    height: 2px;
-    top: 630;
-    left: 990;
-    opacity: .7;
-}
-
-.Star.a26
-{
-    width: 3px;
-    height: 3px;
-    top: 680;
-    left: 1060;
-}
-
-.Star.a27
-{
-    width: 2px;
-    height: 2px;
-    top: 660;
-    left: 1100;
-    opacity: .3;
-}
-
-.Star.a28
-{
-    width: 2px;
-    height: 2px;
-    top: 590;
-    left: 1310;
-}
-
-.Star.a29
-{
-    width: 3px;
-    height: 3px;
-    top: 380;
-    left: 1000;
-}
-
-.Star.a30
-{
-    width: 3px;
-    height: 3px;
-    top: 140;
-    left: 1470;
-}
-
-.Star.a31
-{
-    width: 2px;
-    height: 2px;
-    top: 160;
-    left: 1310;
-}
-
-.Star.a32
-{
-    width: 2px;
-    height: 2px;
-    top: 620;
-    left: 1480;
-    opacity: .3;
-}
-
-.Star.a33
-{
-    width: 2px;
-    height: 2px;
-    top: 380;
-    left: 1300;
-    opacity: .2;
-}
-
-.Star.a34
-{
-    width: 3px;
-    height: 3px;
-    top: 440;
-    left: 10;
-    opacity: .3;
-}
-
-.Star.a35
-{
-    width: 3px;
-    height: 3px;
-    top: 20;
-    left: 660;
-    opacity: .7;
+    from { background-position: 0; }
+    to { background-position: 10000px 0; }
 }
 /*#endregion Stars */
 
@@ -2640,6 +2439,11 @@ code
 
 @media screen and (max-width: 600px)
 {
+    .hider
+    {
+        background-image: linear-gradient(to bottom, transparent 90%, #090d19); /* 090d19 070a14 */
+    }
+
     .siteMenu a.closeButton
     {
         width: 50px;
