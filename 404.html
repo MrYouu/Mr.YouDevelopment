@@ -1,6 +1,7 @@
 <html>
 	<head>
 		<link rel = "icon" href = "Images/tabLogo.png" type = "image" sizes = "16x16">
+		<meta name = "viewport" content = "width = device-width, user-scalable = no, initial-scale = 1">
 		
 		<title>Error 404</title>
 		
@@ -10,6 +11,7 @@
 				margin: 0;
 				padding: 0;
 				box-sizing: border-box;
+				transition: ease .3s;
 			}
 			
 			body
@@ -45,6 +47,11 @@
 				
 				animation: fadein .8s ease-out 1.5s forwards;
 				opacity: 0;
+			}
+
+			h1 text
+			{
+				margin-left: 0px;
 			}
 			
 			h2
@@ -103,6 +110,20 @@
 					opacity: .2;
 				}
 			}
+
+			@keyframes fadeinn
+			{
+				0%
+				{
+					opacity: 0;
+					font-weight: 200px;
+				}
+				
+				100%
+				{
+					opacity: 1;
+				}
+			}
 			
 			@keyframes slidedown
 			{
@@ -133,12 +154,157 @@
 					opacity: 1;
 				}
 			}
-			
+
+			.view
+			{
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				perspective: 400;
+				-webkit-perspective: 400;
+				transform: scale(2, 2);
+
+				animation: fadeinn .8s ease-out 1.5s forwards;
+				opacity: 0;
+			}
+
+			.plane
+			{
+				width: 120px;
+				height: 120px;
+				transform-style: preserve-3d;
+				-webkit-transform-style: preserve-3d;
+			}
+
+			.plane.main
+			{
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				margin: auto;
+				transform: rotateX(60deg) rotateZ(-30deg);
+				animation: rotate 20s infinite linear;
+				-webkit-transform: rotateX(60deg) rotateZ(-30deg);
+				-webkit-animation: rotate 20s infinite linear;
+			}
+
+			.plane.main .circle
+			{
+				position: absolute;
+				width: 120px;
+				height: 120px;
+				box-sizing: border-box;
+				border-radius: 100%;
+				box-shadow: 0 0 60px crimson, inset 0 0 60px crimson;
+				transform-style: preserve-3d;
+				-webkit-transform-style: preserve-3d;
+			}
+
+			.plane.main .circle::before,
+			.plane.main .circle::after
+			{
+				content: "";
+				display: block;
+				position: absolute;
+				width: 10%;
+				height: 10%;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				background: crimson;
+				box-sizing: border-box;
+				border-radius: 100%;
+				box-shadow: 0 0 60px 2px crimson;
+				margin: auto;
+			}
+
+			.plane.main .circle::before
+			{
+				transform: translateZ(-90px);
+				-webkit-transform: translateZ(-90px);
+			}
+
+			.plane.main .circle::after
+			{
+				transform: translateZ(90px);
+				-webkit-transform: translateZ(90px);
+			}
+
+			.plane.main .circle:nth-child(1)
+			{
+				transform: rotateZ(72deg) rotateX(63.435deg);
+				-webkit-transform: rotateZ(72deg) rotateX(63.435deg);
+			}
+
+			.plane.main .circle:nth-child(2)
+			{
+				transform: rotateZ(144deg) rotateX(63.435deg);
+				-webkit-transform: rotateZ(144deg) rotateX(63.435deg);
+			}
+
+			.plane.main .circle:nth-child(3)
+			{
+			-webkit-transform: rotateZ(216deg) rotateX(63.435deg);
+					transform: rotateZ(216deg) rotateX(63.435deg);
+			}
+
+			.plane.main .circle:nth-child(4)
+			{
+				transform: rotateZ(288deg) rotateX(63.435deg);
+				-webkit-transform: rotateZ(288deg) rotateX(63.435deg);
+			}
+
+			.plane.main .circle:nth-child(5)
+			{
+				transform: rotateZ(360deg) rotateX(63.435deg);
+				-webkit-transform: rotateZ(360deg) rotateX(63.435deg);
+			}
+
+			@-webkit-keyframes rotate
+			{
+				0%
+				{
+					-webkit-transform: rotateX(0) rotateY(0) rotateZ(0);
+					transform: rotateX(0) rotateY(0) rotateZ(0);
+				}
+
+				100%
+				{
+					transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+					-webkit-transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+				}
+			}
+
+			@keyframes rotate
+			{
+				0%
+				{
+					transform: rotateX(0) rotateY(0) rotateZ(0);
+					-webkit-transform: rotateX(0) rotateY(0) rotateZ(0);
+				}
+
+				100%
+				{
+					transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+					-webkit-transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+				}
+			}
+
 			@media screen and (max-width: 650px)
 			{
 				h1
 				{
 					font-size: 150px;
+				}
+
+				.view
+				{
+					transform: scale(.9, .9);
 				}
 				
 				h2
@@ -189,6 +355,17 @@
 			<h1>
 				404
 			</h1>
+
+			<div class = "view">
+				<div class = "plane main">
+					<div class = "circle"></div>
+					<div class = "circle"></div>
+					<div class = "circle"></div>
+					<div class = "circle"></div>
+					<div class = "circle"></div>
+					<div class = "circle"></div>
+				</div>
+			</div>
 			
 			<div class = "Content">
 				<h2>
