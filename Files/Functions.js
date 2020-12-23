@@ -1,117 +1,100 @@
 //  The JavaScript code is property to Mr. You (Kristiyan Valchev) and can only be viewed
 //  If you want to use part of the code, please first contact me: mr.youdevelopment@gmail.com
 
-function showCoords(event)
-{
-  var x = event.clientX;
-  var y = event.clientY;
-  var coords = "Y coords: " + y + ", X coords: " + x;
-  document.getElementById("mouseCoordinatesText").innerHTML = coords;
+function showCoords(event) {
+    var x = event.clientX;
+    var y = event.clientY;
+    var coords = "Y coords: " + y + ", X coords: " + x;
+    document.getElementById("mouseCoordinatesText").innerHTML = coords;
 }
 
-function openSideMenu()
-{
+function openSideMenu() {
     document.getElementById("sideMenu").style.transform = "translateX(0%)";
 }
 
-function closeSideMenu()
-{
+function closeSideMenu() {
     document.getElementById("sideMenu").style.transform = "translateX(100%)";
 }
 
 // #region To-links
-function toHomePage()
-{
+function toHomePage() {
     toPageAnimation();
-    setTimeout(function ()
-    {
+    setTimeout(function () {
         location.replace("../index.html")
     }, 500);
 }
 
-function toHomePageFromHiddenPage()
-{
+function toHomePageFromHiddenPage() {
     toPageAnimation();
-    setTimeout(function ()
-    {
+    setTimeout(function () {
         location.replace("../../index.html")
     }, 500);
 }
 
-function toAboutPage()
-{
+function toAboutPage() {
     toPageAnimation();
-    setTimeout(function ()
-    {
+    setTimeout(function () {
         location.replace("../otherPages/About.html")
     }, 500);
 }
 
-function toLearnPage()
-{
+function toLearnPage() {
     toPageAnimation();
-    setTimeout(function ()
-    {
+    setTimeout(function () {
         location.replace("../otherPages/Learn.html")
     }, 500);
 }
 
-function toProjectsPage()
-{
+function toProjectsPage() {
     toPageAnimation();
-    setTimeout(function ()
-    {
+    setTimeout(function () {
         location.replace("../otherPages/Projects.html")
     }, 500);
 }
 
-function toLearnCSharpPage()
-{
+function toLearnCSharpPage() {
     toPageAnimation();
-    setTimeout(function ()
-    {
+    setTimeout(function () {
         location.replace("../Learn/CSharp.html")
     }, 500);
 }
 
-function toLearnHTMLPage()
-{
+function toLearnHTMLPage() {
     toPageAnimation();
-    setTimeout(function ()
-    {
+    setTimeout(function () {
         location.replace("../Learn/HTML.html")
     }, 500);
 }
 
-function toLearnCSSPage()
-{
+function toLearnCSSPage() {
     toPageAnimation();
-    setTimeout(function ()
-    {
+    setTimeout(function () {
         location.replace("../Learn/CSS.html")
     }, 500);
 }
 
-function toHiddenPage()
-{
+function toBrainfuckTranslatorPage() {
     toPageAnimation();
-    setTimeout(function ()
-    {
+    setTimeout(function () {
+        location.replace("../Projects/brainfuckTranslator.html")
+    }, 500);
+}
+
+function toHiddenPage() {
+    toPageAnimation();
+    setTimeout(function () {
         location.replace("../otherPages/hiddenPages/hiddenHome.html")
     }, 500);
 }
 
-function toPageAnimation()
-{
+function toPageAnimation() {
     document.getElementById("redirectionButton01").style.height = "100%";
 
-    setTimeout(function ()
-    {
+    setTimeout(function () {
         document.getElementById("redirectionButton02").style.height = "100%";
     }, 100);
 
-    setTimeout(function ()
-    {
+    setTimeout(function () {
         document.getElementById("redirectionButton03").style.height = "100%";
     }, 200);
 }
@@ -123,36 +106,31 @@ var count02 = 0;
 var count04 = 0;
 var showHiddenPage = false;
 
-function get01OneUp()
-{
+function get01OneUp() {
     count01++;
     sessionStorage.setItem("count01Saved", count01);
     checkForHiddenPage();
 }
 
-function get02OneUp()
-{
+function get02OneUp() {
     count02++;
     sessionStorage.setItem("count02Saved", count02);
     checkForHiddenPage();
 }
 
-function get04OneUp()
-{
+function get04OneUp() {
     count04++;
     sessionStorage.setItem("count04Saved", count04);
     checkForHiddenPage();
 }
 
-function checkForHiddenPage()
-{
+function checkForHiddenPage() {
     count01 = sessionStorage.getItem("count01Saved");
     count02 = sessionStorage.getItem("count02Saved");
     count04 = sessionStorage.getItem("count04Saved");
     showHiddenPage = sessionStorage.getItem("showHiddenPageSave");
 
-    if ((count01 == 2 && count02 == 8 && count04 == 1) || showHiddenPage)
-    {
+    if ((count01 == 2 && count02 == 8 && count04 == 1) || showHiddenPage) {
         showHiddenPage = true;
         sessionStorage.setItem("showHiddenPageSave", showHiddenPage);
 
@@ -168,8 +146,7 @@ function checkForHiddenPage()
 }
 // #endregion
 
-function changeLearnBox(thisLearnBox, newLearnBoxHolderID)
-{
+function changeLearnBox(thisLearnBox, newLearnBoxHolderID) {
     var oldLearnBox = document.getElementById("learnBoxHolder");
     oldLearnBox.remove();
 
@@ -187,17 +164,11 @@ function changeLearnBox(thisLearnBox, newLearnBoxHolderID)
     document.getElementById(thisLearnBox).className += " Active";
 }
 
-function copyText(textToCopyID)
-{
+function copyText(textToCopyID) {
     var range = document.createRange();
     range.selectNode(document.getElementById(textToCopyID));
     window.getSelection().removeAllRanges();
     window.getSelection().addRange(range);
     document.execCommand("copy");
     window.getSelection().removeAllRanges();
-}
-
-function defaultFunction()
-{
-
 }

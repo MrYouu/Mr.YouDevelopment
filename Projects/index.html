@@ -1,0 +1,166 @@
+<!--The HTML code is property to Mr. You (Kristiyan Valchev) and can only be viewed-->
+<!--If you want to use part of the code, please first contact me: krisvalchev@gmail.com-->
+
+<html id="html">
+    <head id="head">
+        <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="Files/Style.css">
+        <link rel="icon" href="Images/Logo.png" type="image" sizes="16x16">
+
+        <meta charset="utf-8">
+        <meta name="description" content="This is a website for transferring normal text into BrainF*ck code (.bf)">
+        <meta name="keywords" content="BrainFuck, BrainF*ck, brainFuck, brainf*ck, brainfuck, brainf*ck, translator, translation, normal, text, to, generator, generation">
+        <meta name="author" content="Kristiyan Valchev">
+        <meta name="viewport" content="width = device-width, user-scalable = no, initial-scale = 1">
+
+        <script type="text/javascript" src="Files/Functions.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="https://kit.fontawesome.com/f0c48353c6.js"></script>
+
+        <title>Brainfuck text generator</title>
+    </head>
+
+    <body id="body">
+        <div class = "messageHolder">
+            <!-- Correctnesses -->
+            <div class = "correctnessHolder" id = "correctness textCopied">
+                <p>Text copied</p>
+            </div>
+
+            <!-- Errors -->
+            <div class = "errorHolder" id = "Error error">
+                <p>Error</p>
+            </div>
+        </div>
+
+        <h1 class="mainText">Brainfuck text generator</h1>
+
+        <h2 class="normalText">Normal text:</h2>
+        <textarea id="in"></textarea>
+
+        <h2 class="normalText">Brainfuck code:</h2>
+        <textarea onclick="copyText('out')" style="cursor: pointer;" readonly="" id="out"></textarea>
+
+        <p class="infoText" id="info_head">
+            Processing ... done (0.28 seconds).
+        </p>
+
+        <p class="infoText" style="margin-bottom: 30px;">
+            Text length = <text style="color: green;" id="textLenght">0</text> bytes <br>
+            Code length = <text style="color: green;" id="codeLenght">0</text> bytes <br>
+            Ratio = <text style="color: green;" id="Ratio">0.00</text>
+        </p>
+
+        <script>
+            var inp = document.getElementById("in"),
+                out = document.getElementById("out"),
+                textLenghtHTML = document.getElementById("textLenght"),
+                codeLenghtHTML = document.getElementById("codeLenght"),
+                ratioHTML = document.getElementById("Ratio"),
+                info_head = document.getElementById("info_head");
+            
+            function gcd(c, a)  {
+                return 0 === a ? c : gcd(a, c % a);
+            }
+
+            function inverse_mod(c, a) {
+                for (var f = 1, d = 0, b; a;)
+                    (b = f),
+                    (f = d),
+                    (d = b - d * ((c / a) | 0)),
+                    (b = c),
+                    (c = a),
+                    (a = b % a);
+                
+                return f;
+            }
+
+            function shortest_str(c) {
+                for (var a = 0, f = 1; f < c.length; f++)
+                    c[f].length < c[a].length && (a = f);
+                
+                return a;
+            }
+
+            for (var map = [], plus_map = [""], minus_map = [""], iter = !0, repeat = 2, start, i = 1; 256 > i; i++)
+                (plus_map[i] = plus_map[i - 1] + "+"),
+                (minus_map[i] = minus_map[i - 1] + "-");
+
+            for (var x = 0; 256 > x; x++) {
+                map[x] = [];
+
+                for (var y = 0; 256 > y; y++) {
+                    var delta = y - x;
+                    128 < delta && (delta -= 256);
+                    -128 > delta && (delta += 256);
+                    map[x][y] = 0 <= delta ? plus_map[delta] : minus_map[-delta];
+                }
+            }
+
+            function next() {
+                iter = !1;
+                for (var c = 0; 256 > c; c++)
+                    for (var a = 1; 40 > a; a++)
+                        for (var f = inverse_mod(a, 256) & 255, d = 1; 40 > d; d++)
+                            if (1 == gcd(a, d)) {
+                                if (a & 1) {
+                                    var b = 0;
+                                    var e = (c * f) & 255;
+                                }
+                                else
+                                    for (b = c, e = 0; 256 > e && b; e++)
+                                        b = (b - a) & 255; 0 == b && ((b = (d * e) & 255),
+                                        a + d + 5 < map[c][b].length && (map[c][b] = "[" + minus_map[a] + ">" + plus_map[d] + "<]>"));
+
+                                        if (a & 1) (b = 0), (e = (-c * f) & 255);
+                                        else
+                                            for (b = c, e = 0; 256 > e && b; e++)
+                                                b = (b + a) & 255;
+                                                0 == b && ((b = (-d * e) & 255),
+                                                a + d + 5 < map[c][b].length && (map[c][b] = "[" + plus_map[a] + ">" + minus_map[d] + "<]>"));
+                            }
+
+                        for (c = 0; 256 > c; c++)
+                            for (a = map[c], e = 0; 256 > e; e++)
+                                for (f = map[e], d = a[e], b = 0; 256 > b; b++)
+                                    d.length + f[b].length < a[b].length && (a[b] = d + f[b]);
+                                    --repeat ? ((info_head.textContent += "."),
+                                    setTimeout(next, 0)) : ((info_head.textContent +=". done (" + ((new Date() - start) / 1e3).toFixed(2) + " seconds)."),
+                                
+                do_generate());
+            }
+
+            function generate(c) {
+                for (var a = 0, f = c.length, d = "", b = 0; b < f; b++) {
+                    var e = c.charCodeAt(b) & 255;
+
+                    a = [">" + map[0][e], map[a][e]];
+                    var g = shortest_str(a);
+                    d += a[g] + ".";
+                    a = e;
+                }
+
+                return d;
+            }
+
+            function do_generate() {
+                if (!repeat) {
+                    var c = inp.value,
+                        a = generate(c);
+
+                    out.value = a;
+                    textLenghtHTML.textContent = c.length;
+                    codeLenghtHTML.textContent = a.length;
+                    ratioHTML.textContent = (a.length / (c.length || 1)).toFixed(2);
+                }
+            }
+
+            window.onload = function () {
+                info_head.textContent = "Processing .";
+                start = new Date();
+                setTimeout(next, 0);
+                "oninput" in inp ? (inp.oninput = do_generate) : (inp.onkeyup = do_generate);
+            };
+        </script>
+    </body>
+</html>

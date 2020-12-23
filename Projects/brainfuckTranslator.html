@@ -1,0 +1,295 @@
+<!--The HTML code is property to Mr. You (Kristiyan Valchev) and can only be viewed-->
+<!--If you want to use part of the code, please first contact me: mr.youdevelopment@gmail.com-->
+
+<html id = "html">
+    <head id="head">
+        <link href = "https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap" rel = "stylesheet">
+        <link type = "text/css" rel = "stylesheet" href = "../Files/Style.css">
+        <link rel = "icon" href = "../Images/tabLogo.png" type = "image" sizes = "16x16">
+
+        <meta charset = "utf-8">
+        <meta name = "description" content = "Here you can check and learn new codes in C#, HTML or CSS. I hope you also check the exercises after you learned the new technics. Take a try...">
+        <meta name = "keywords" content = "Programming, C#, HTML, CSS, Kristiyan, Valchev, Games, Apps, Help">
+        <meta name = "author" content = "Kristiyan Valchev">
+        <meta name = "viewport" content = "width = device-width, user-scalable = no, initial-scale = 1">
+        
+        <script type = "text/javascript" src = "../Files/Functions.js"></script>
+        <script src = "https://kit.fontawesome.com/190623e0b3.js" crossorigin = "anonymous"></script>
+
+        <title>Brainfuck translator</title>
+    </head>
+
+    <body id = "body" onload = "checkForHiddenPage()">
+        <!-- #region Loader -->
+        <img src = "../Images/linkImages/projectsPage.png" alt = "Link image" style = "display: none;">
+
+        <div class = "Loader">
+            <div class = "Letter">G</div>
+            <div class = "Letter">N</div>
+            <div class = "Letter">I</div>
+            <div class = "Letter">D</div>
+            <div class = "Letter">A</div>
+            <div class = "Letter">O</div>
+            <div class = "Letter">L</div>
+        </div>
+
+        <script>
+            function toLanguagesPage()
+            {
+                window.scroll(
+                {
+                    top: 1800
+                });
+            }
+
+            window.scroll(
+            {
+                top: 0,
+                left: 0,
+                behavior: 'smooth'
+            });
+
+            window.addEventListener("load", function ()
+			{
+				const Loader = document.querySelector(".Loader")
+                Loader.className += " hidden";
+            });
+		</script>
+        <!-- #endregion Loader -->
+
+        <div class = "redirectionButtonAnimationBox a01" id = "redirectionButton01"></div>
+        <div class = "redirectionButtonAnimationBox a02" id = "redirectionButton02"></div>
+        <div class = "redirectionButtonAnimationBox a03" id = "redirectionButton03"></div>
+        
+        <div class = "messageHolder">
+            <!-- Correctnesses -->
+            <div class = "correctnessHolder" id = "correctness textCopied">
+                <p>Text copied</p>
+            </div>
+
+            <!-- Errors -->
+            <div class = "errorHolder" id = "Error error">
+                <p>Error</p>
+            </div>
+        </div>
+
+        <div class = "backGround Projects"></div>
+        <div class = "starsHolder">
+            <div class = "stars"></div>
+            <div class = "twinkling"></div>
+            <div class = "hider"></div>
+        </div>
+        <div class = "clouds Projects"></div>
+
+        <div class = "topBar">
+            <a onclick = "toHomePage()" class = "Logo"><img src = "../Images/Logo.png" alt = "Logo">DEV</a>
+            <a href="Projects.html" class = "Active">PROJECTS</a>
+            <div class = "hasDropdown">
+                <a onclick="toLearnPage()">LEARN</a>
+                <div class = "dropDownMenu">
+                    <a onclick = "toLearnCSharpPage()">C#</a>
+                    <a onclick = "toLearnHTMLPage()">HTML</a>
+                    <a onclick = "toLearnCSSPage()">CSS</a>
+                </div>
+            </div>
+            <a onclick = "toAboutPage()">ABOUT</a>
+            <a onclick = "toHomePage()">HOME</a>
+
+            <a onclick = "openSideMenu()" class = "threeLineButton">
+                <div></div>
+                <div></div>
+                <div></div>
+            </a>
+        </div>
+
+        <div class = "siteMenu" id = "sideMenu">
+            <a onclick = "closeSideMenu()" class = "closeButton">
+                <div></div>
+                <div></div>
+            </a>
+
+            <a onclick = "toHomePage()"><div></div> HOME <div></div></a>
+            <a onclick = "toAboutPage()"><div></div> ABOUT <div></div></a>
+            <a onclick = "toLearnPage()"><div></div> LEARN <div></div></a>
+            <a href="Projects.html" class = "Active"><div></div> PROJECTS <div></div></a>
+        </div>
+
+        <img src = "../Images/projectsPageBall.png" alt = "Cool loking ball with light" class = "ballImage">
+        <div class = "ballRingHolder"><div class = "ballRing"></div></div>
+
+        <h1 class = "Title">BRAINF*Ck</h1>
+        <h3 class = "subTitle">text to code</h3>
+
+        <p class = "pageNumber" onclick = "get04OneUp()">09</p>
+
+        <div class = "pageContent">
+            <h2 class="normalText">Normal text:</h2>
+            <textarea class="brainfuckTextArea" id="in"></textarea>
+
+            <h2 class="normalText">Brainfuck code:</h2>
+            <textarea class="brainfuckTextArea" onclick="copyText('out')" style="cursor: pointer;" style="height: fit-content" id="out" readonly></textarea>
+
+            <p class="normalText" style="margin-bottom: 30px; color: #e5e5e580;" id="info_head">
+                Processing ... done (0.28 seconds).
+            </p>
+
+            <p class="normalText" style="margin-bottom: 30px; color: #e5e5e580;">
+                Text length = <text style="color: green;" id="textLenght">0</text> bytes <br>
+                Code length = <text style="color: green;" id="codeLenght">0</text> bytes <br>
+                Ratio = <text style="color: green;" id="Ratio">0.00</text>
+            </p>
+
+            <div class = "bottomBar pRelative">
+                <div class = "directionButton H"><a onclick = "toHomePage()">HOME</a></div>
+                <div class = "directionButton A"><a onclick = "toAboutPage()">ABOUT</a></div>
+                <div class = "directionButton L"><a onclick = "toLearnPage()">LEARN</a></div>
+                <div class = "directionButton P"><a href="Projects.html" class = "Active">PROJECTS</a></div>
+    
+                <div class = "bottomLinksHolder">
+                    <a href = "https://www.facebook.com/profile.php?id=100023130139405" target = "_blank"><i class = "fab fa-facebook-f"></i></a>
+                    <a href = "https://www.instagram.com/kriss.vv/" target = "_blank"><i class = "fab fa-instagram"></i></a>
+                    <a href = "mailto: mr.youdevelopment@gmail.com"><i class="far fa-envelope"></i></a>
+                </div>
+    
+                <p class = "Credits">
+                    <powerd>Site powered by <company>Mr. You Development</company>.</powerd>
+                    <managed> Managed by <my>Kristiyan Valchecv</my></managed>
+                </p>
+            </div>
+        </div>
+
+        <script>
+            function copyText(id) {
+                var r = document.createRange();
+                r.selectNode(document.getElementById(id));
+                window.getSelection().removeAllRanges();
+                window.getSelection().addRange(r);
+                document.execCommand('copy');
+                window.getSelection().removeAllRanges();
+
+                document.getElementById("correctness textCopied").style.display = "block";
+                desableElement("correctness textCopied", 2.5);
+            }
+
+            function desableElement(elementID, timerSeconds) {
+                window.setTimeout(function () {
+                    var label = document.getElementById(elementID);
+                    if (label != null) {
+                        label.style.display = "none";
+                    }
+                }, timerSeconds * 1000);
+            }
+
+
+            var inp = document.getElementById("in"),
+                out = document.getElementById("out"),
+                textLenghtHTML = document.getElementById("textLenght"),
+                codeLenghtHTML = document.getElementById("codeLenght"),
+                ratioHTML = document.getElementById("Ratio"),
+                info_head = document.getElementById("info_head");
+            
+            function gcd(c, a)  {
+                return 0 === a ? c : gcd(a, c % a);
+            }
+
+            function inverse_mod(c, a) {
+                for (var f = 1, d = 0, b; a;)
+                    (b = f),
+                    (f = d),
+                    (d = b - d * ((c / a) | 0)),
+                    (b = c),
+                    (c = a),
+                    (a = b % a);
+                
+                return f;
+            }
+
+            function shortest_str(c) {
+                for (var a = 0, f = 1; f < c.length; f++)
+                    c[f].length < c[a].length && (a = f);
+                
+                return a;
+            }
+
+            for (var map = [], plus_map = [""], minus_map = [""], iter = !0, repeat = 2, start, i = 1; 256 > i; i++)
+                (plus_map[i] = plus_map[i - 1] + "+"),
+                (minus_map[i] = minus_map[i - 1] + "-");
+
+            for (var x = 0; 256 > x; x++) {
+                map[x] = [];
+
+                for (var y = 0; 256 > y; y++) {
+                    var delta = y - x;
+                    128 < delta && (delta -= 256);
+                    -128 > delta && (delta += 256);
+                    map[x][y] = 0 <= delta ? plus_map[delta] : minus_map[-delta];
+                }
+            }
+
+            function next() {
+                iter = !1;
+                for (var c = 0; 256 > c; c++)
+                    for (var a = 1; 40 > a; a++)
+                        for (var f = inverse_mod(a, 256) & 255, d = 1; 40 > d; d++)
+                            if (1 == gcd(a, d)) {
+                                if (a & 1) {
+                                    var b = 0;
+                                    var e = (c * f) & 255;
+                                }
+                                else
+                                    for (b = c, e = 0; 256 > e && b; e++)
+                                        b = (b - a) & 255; 0 == b && ((b = (d * e) & 255),
+                                        a + d + 5 < map[c][b].length && (map[c][b] = "[" + minus_map[a] + ">" + plus_map[d] + "<]>"));
+
+                                        if (a & 1) (b = 0), (e = (-c * f) & 255);
+                                        else
+                                            for (b = c, e = 0; 256 > e && b; e++)
+                                                b = (b + a) & 255;
+                                                0 == b && ((b = (-d * e) & 255),
+                                                a + d + 5 < map[c][b].length && (map[c][b] = "[" + plus_map[a] + ">" + minus_map[d] + "<]>"));
+                            }
+
+                        for (c = 0; 256 > c; c++)
+                            for (a = map[c], e = 0; 256 > e; e++)
+                                for (f = map[e], d = a[e], b = 0; 256 > b; b++)
+                                    d.length + f[b].length < a[b].length && (a[b] = d + f[b]);
+                                    --repeat ? ((info_head.textContent += "."),
+                                    setTimeout(next, 0)) : ((info_head.textContent +=". done (" + ((new Date() - start) / 1e3).toFixed(2) + " seconds)."),
+                                
+                do_generate());
+            }
+
+            function generate(c) {
+                for (var a = 0, f = c.length, d = "", b = 0; b < f; b++) {
+                    var e = c.charCodeAt(b) & 255;
+
+                    a = [">" + map[0][e], map[a][e]];
+                    var g = shortest_str(a);
+                    d += a[g] + ".";
+                    a = e;
+                }
+
+                return d;
+            }
+
+            function do_generate() {
+                if (!repeat) {
+                    var c = inp.value,
+                        a = generate(c);
+
+                    out.value = a;
+                    textLenghtHTML.textContent = c.length;
+                    codeLenghtHTML.textContent = a.length;
+                    ratioHTML.textContent = (a.length / (c.length || 1)).toFixed(2);
+                }
+            }
+
+            window.onload = function () {
+                info_head.textContent = "Processing .";
+                start = new Date();
+                setTimeout(next, 0);
+                "oninput" in inp ? (inp.oninput = do_generate) : (inp.onkeyup = do_generate);
+            };
+        </script>
+    </body>
+</html>

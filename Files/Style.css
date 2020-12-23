@@ -31,6 +31,7 @@ body::before
     box-shadow: 0px 0px 30px #000000;
     z-index: 100;
 }
+
 /*#region Scrow bar */
 ::-webkit-scrollbar
 {
@@ -556,6 +557,13 @@ body::before
                       radial-gradient(circle at -20% 15%, #37FFFEa0 0px, transparent 40%);
 }
 
+.backGround.Projects
+{
+    background-image: radial-gradient(circle at 50% 0%, #4b5063 100px, transparent 80%),
+                      radial-gradient(circle at 100% 0%, #d60084b0 0px, transparent 40%),
+                      radial-gradient(circle at 0% 35%, #ff990080 0px, transparent 40%);
+}
+
 .backGround.hiddenPage
 {
     background-image: radial-gradient(circle at 50% 0%, #FF0000 0px, transparent 80%);
@@ -715,7 +723,40 @@ body::before
     left: 0;
     background-color: transparent;
 
-    z-index: -5;
+    z-index: 0;
+}
+
+.pageContent .normalText
+{
+    position: relative;
+    width: calc(100% - 60px);
+    top: 0;
+    left: 30;
+    text-align: center;
+    color: #e5e5e5;
+    margin-bottom: 5px;
+}
+
+.pageContent .brainfuckTextArea
+{
+    position: relative;
+    width: 600px;
+    height: 100px;
+    top: 0;
+    left: calc(50% - 300px);
+    color: #e5e5e5;
+    background-color: #343849;
+    border: solid 4px #4b506300;
+    outline: none;
+    resize: none;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.pageContent .brainfuckTextArea:focus
+{
+    border: solid 4px #4b5063;
+    transition: ease .3s;
 }
 
 .sectionHolderBG
@@ -1472,6 +1513,11 @@ body::before
     background: transparent url(../Images/learnPageClouds.png) repeat-x top center;
 }
 
+.clouds.Projects
+{
+    background: transparent url(../Images/projectsPageClouds.png) repeat-x top center;
+}
+
 .hider
 {
     position: absolute;
@@ -1764,6 +1810,62 @@ body::before
     transition: ease .3s;
 }
 /*#endregion Bottom bar */
+
+/*#region Messages */
+.messageHolder
+{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+
+    z-index: 5;
+}
+
+.messageHolder .errorHolder, .messageHolder .correctnessHolder
+{
+    display: none;
+    position: relative;
+    width: calc(100% - 30px);
+    height: auto;
+    top: 0;
+    left: 15;
+    border-radius: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    animation: dropDown .5s ease-out forwards;
+    transform: translateY(-50px);
+    opacity: 0;
+}
+
+.messageHolder .errorHolder
+{
+    background-color: red;
+}
+
+.messageHolder .correctnessHolder
+{
+    background-color: green;
+}
+
+.messageHolder .errorHolder p, .messageHolder .correctnessHolder p
+{
+    position: relative;
+    width: calc(100% - 30px);
+    height: auto;
+    top: 0;
+    left: 15;
+    font-size: 16px;
+    font-weight: normal;
+    text-align: center;
+    line-height: 20px;
+    color: #fefefe;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+/*#endregion Messages */
 
 img
 {
@@ -2338,6 +2440,12 @@ code
     .Title:hover + .subTitle, .subTitle:hover
     {
         letter-spacing: 5px;
+    }
+
+    .pageContent .brainfuckTextArea
+    {
+        width: calc(100% - 30px);
+        left: 15;
     }
 }
 

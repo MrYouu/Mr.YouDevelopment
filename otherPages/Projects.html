@@ -16,12 +16,12 @@
         <script type = "text/javascript" src = "../Files/Functions.js"></script>
         <script src = "https://kit.fontawesome.com/190623e0b3.js" crossorigin = "anonymous"></script>
 
-        <title>Learn Mr. You</title>
+        <title>Projects</title>
     </head>
 
     <body id = "body" onload = "checkForHiddenPage()">
         <!-- #region Loader -->
-        <img src = "../Images/linkImages/learnPage.png" alt = "Link image" style = "display: none;">
+        <img src = "../Images/linkImages/projectsPage.png" alt = "Link image" style = "display: none;">
 
         <div class = "Loader">
             <div class = "Letter">G</div>
@@ -61,19 +61,19 @@
         <div class = "redirectionButtonAnimationBox a02" id = "redirectionButton02"></div>
         <div class = "redirectionButtonAnimationBox a03" id = "redirectionButton03"></div>
         
-        <div class = "backGround Learn"></div>
+        <div class = "backGround Projects"></div>
         <div class = "starsHolder">
             <div class = "stars"></div>
             <div class = "twinkling"></div>
             <div class = "hider"></div>
         </div>
-        <div class = "clouds Learn"></div>
+        <div class = "clouds Projects"></div>
 
-        <div class = "topBar Learn">
+        <div class = "topBar">
             <a onclick = "toHomePage()" class = "Logo"><img src = "../Images/Logo.png" alt = "Logo">DEV</a>
-            <a onclick = "toProjectsPage()">PROJECTS</a>
+            <a href="Projects.html" class = "Active">PROJECTS</a>
             <div class = "hasDropdown">
-                <a href = "Learn.html" class = "Active">LEARN</a>
+                <a onclick="toLearnPage()">LEARN</a>
                 <div class = "dropDownMenu">
                     <a onclick = "toLearnCSharpPage()">C#</a>
                     <a onclick = "toLearnHTMLPage()">HTML</a>
@@ -98,62 +98,65 @@
 
             <a onclick = "toHomePage()"><div></div> HOME <div></div></a>
             <a onclick = "toAboutPage()"><div></div> ABOUT <div></div></a>
-            <a href = "Learn.html" class = "Active"><div></div> LEARN <div></div></a>
-            <a onclick = "toProjectsPage()"><div></div> PROJECTS <div></div></a>
+            <a onclick = "toLearnPage()"><div></div> LEARN <div></div></a>
+            <a href="Projects.html" class = "Active"><div></div> PROJECTS <div></div></a>
         </div>
 
-        <img src = "../Images/learnPageBall.png" alt = "Cool loking ball with light" class = "ballImage">
+        <img src = "../Images/projectsPageBall.png" alt = "Cool loking ball with light" class = "ballImage">
         <div class = "ballRingHolder"><div class = "ballRing"></div></div>
 
-        <h1 class = "Title">LEARN</h1>
-        <h3 class = "subTitle">PROGRAMMING</h3>
+        <h1 class = "Title">PROJECTS</h1>
+        <h3 class = "subTitle">Software & Apps & Games</h3>
 
-        <p class = "pageNumber">03</p>
+        <p class = "pageNumber" onclick = "get04OneUp()">04</p>
 
         <div class = "pageContent">
-            <div class = "sectionHolderBG Left Learn">
-                <div class = "sectionHolder">
-                    <h1 class = "sectionTitle">KNOWLEDGE <div></div></h1>
-                    <p class = "sectionText">
-                        Here you can gain additional programming skills in C#, HTML or CSS.
-                        Check the exercises after you learned the new techniques and practise them.
-                    </p>
-    
-                    <a onclick = "toLanguagesPage()" class = "sectionButton"><i class = "fas fa-angle-double-right"></i></a>
-                </div>
-                <img src = "../Images/learnPage/knowledgeTextImage.jpg" alt = "Learn image" class = "sectionImage">
-            </div>
-
             <div class = "boxHolderX3">
                 <div class = "boxeBG">
-                    <img src = "../Images/learnPage/CShIcon.png" alt = "C# Icon" class = "boxImage">
+                    <!-- <img src = "../Images/learnPage/CShIcon.png" alt = "C# Icon" class = "boxImage">
                     <h1 class = "boxTitle">C#</h1>
                     <p class = "boxText">
                         General-purpose, multi-paradigm programming language. Used mainly in making
                         windows applications and games. Check the 0 tips and tricks.
                     </p>
-                    <a onclick = "toLearnCSharpPage()" class = "boxButton">Start now</a>
+                    <a onclick = "toLearnCSharpPage()" class = "boxButton">Start now</a> -->
                 </div>
-
                 <div class = "boxeBG">
-                    <img src = "../Images/learnPage/HTMLIcon.png" alt = "HTML Icon" class = "boxImage">
-                    <h1 class = "boxTitle">HTML</h1>
+                    <img src = "../Images/projectsPage/brainfuckIcon.png" alt = "HTML Icon" class = "boxImage">
+                    <h1 class = "boxTitle">Brainf*ck translator</h1>
                     <p class = "boxText">
-                        Hypertext Markup Language is the standard markup language for documents
-                        designed to be displayed in a web browser. Check the 0 tips and tricks.
+                        Brainfuck is an esoteric programming language created in 1993 by Urban Müller.
+                        Notable for its extreme minimalism, the language consists of only eight simple commands.
                     </p>
-                    <a onclick = "toLearnHTMLPage()" class = "boxButton">Start now</a>
+                    <a onclick = "toBrainfuckTranslatorPage()" class = "boxButton">Translate</a>
                 </div>
-
                 <div class = "boxeBG">
-                    <img src = "../Images/learnPage/CSSIcon.png" alt = "CSS Icon" class = "boxImage">
+                    <!-- <img src = "../Images/learnPage/CSSIcon.png" alt = "CSS Icon" class = "boxImage">
                     <h1 class = "boxTitle">CSS</h1>
                     <p class = "boxText">
                         Cascading Style Sheets is a style sheet language used for describing the
                         presentation of a document written in HTML. Check the 0 tips and tricks.
                     </p>
-                    <a onclick = "toLearnCSSpPage()" class = "boxButton">Start now</a>
+                    <a onclick = "toLearnCSSpPage()" class = "boxButton">Start now</a> -->
                 </div>
+            </div>
+
+            <div class = "bottomBar pRelative">
+                <div class = "directionButton H"><a onclick = "toHomePage()">HOME</a></div>
+                <div class = "directionButton A"><a onclick = "toAboutPage()">ABOUT</a></div>
+                <div class = "directionButton L"><a onclick = "toLearnPage()">LEARN</a></div>
+                <div class = "directionButton P"><a href="Projects.html" class = "Active">PROJECTS</a></div>
+    
+                <div class = "bottomLinksHolder">
+                    <a href = "https://www.facebook.com/profile.php?id=100023130139405" target = "_blank"><i class = "fab fa-facebook-f"></i></a>
+                    <a href = "https://www.instagram.com/kriss.vv/" target = "_blank"><i class = "fab fa-instagram"></i></a>
+                    <a href = "mailto: mr.youdevelopment@gmail.com"><i class="far fa-envelope"></i></a>
+                </div>
+    
+                <p class = "Credits">
+                    <powerd>Site powered by <company>Mr. You Development</company>.</powerd>
+                    <managed> Managed by <my>Kristiyan Valchecv</my></managed>
+                </p>
             </div>
         </div>
 
@@ -162,24 +165,6 @@
                 <h6>CONGRATS</h6>
                 <p>Go to hidden page</p>
             </a>
-        </div>
-
-        <div class = "bottomBar learnPage">
-            <div class = "directionButton H"><a onclick = "toHomePage()">HOME</a></div>
-            <div class = "directionButton A"><a onclick = "toAboutPage()">ABOUT</a></div>
-            <div class = "directionButton L"><a href = "Learn.html" class = "Active">LEARN</a></div>
-            <div class = "directionButton P"><a onclick = "toProjectsPage()">PROJECTS</a></div>
-
-            <div class = "bottomLinksHolder">
-                <a href = "https://www.facebook.com/profile.php?id=100023130139405" target = "_blank"><i class = "fab fa-facebook-f"></i></a>
-                <a href = "https://www.instagram.com/kriss.vv/" target = "_blank"><i class = "fab fa-instagram"></i></a>
-                <a href = "mailto: mr.youdevelopment@gmail.com"><i class="far fa-envelope"></i></a>
-            </div>
-
-            <p class = "Credits">
-                <powerd>Site powered by <company>Mr. You Development</company>.</powerd>
-                <managed> Managed by <my>Kristiyan Valchecv</my></managed>
-            </p>
         </div>
     </body>
 </html>
